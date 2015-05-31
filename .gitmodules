@@ -4,3 +4,6 @@
 [submodule "SlideELK"]
 	path = SlideELK
 	url = https://github.com/gauthierc/SlideELK
+[submodule "SlideCoreOS"]
+	path = SlideCoreOS
+	url = https://github.com/gauthierc/SlideCoreOS
