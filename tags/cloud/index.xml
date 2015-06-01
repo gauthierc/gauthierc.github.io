@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloud on Le Blog de Gauthier</title>
+    <link>http://gauthierc.github.io/tags/cloud/</link>
+    <description>Recent content in Cloud on Le Blog de Gauthier</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Thu, 22 Jan 2015 09:30:00 +0100</lastBuildDate>
+    <atom:link href="http://gauthierc.github.io/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>slide Virtualisation CLoud</title>
+      <link>http://gauthierc.github.io/post/slidevirtu/</link>
+      <pubDate>Thu, 22 Jan 2015 09:30:00 +0100</pubDate>
+      
+      <guid>http://gauthierc.github.io/post/slidevirtu/</guid>
+      <description>&lt;p&gt;Voici la mise en ligne d&amp;rsquo;une petite présentation sur les concepts de la virtualisation et sur le cloud en général.
+Cette présentation a été donné à des étudiants, j&amp;rsquo;ai l&amp;rsquo;impression que le personnel de l&amp;rsquo;université et les chercheurs présent dans la salle étaient beaucoup plus intéressé par mon discours.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://gauthierc.github.io/SlideVirtu/&#34;&gt;http://gauthierc.github.io/SlideVirtu/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Elk on Le Blog de Gauthier</title>
+    <link>http://gauthierc.github.io/categories/elk/</link>
+    <description>Recent content in Elk on Le Blog de Gauthier</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Wed, 25 Mar 2015 10:00:00 +0200</lastBuildDate>
+    <atom:link href="http://gauthierc.github.io/categories/elk/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Slide ElasticSearch Logstash Kibana</title>
+      <link>http://gauthierc.github.io/post/slideelk/</link>
+      <pubDate>Wed, 25 Mar 2015 10:00:00 +0200</pubDate>
+      
+      <guid>http://gauthierc.github.io/post/slideelk/</guid>
+      <description>&lt;p&gt;Voici mes slides sur ElasticSearch Kibana et Logstash que j&amp;rsquo;ai présenté lors de 2 conférences (une à Lille et l&amp;rsquo;autre à Paris) en mars 2015. ElasticSearch est un super produit, par contre Kibana 4 est très différent de Kibana 3. Je n&amp;rsquo;ai pas encore eu le temps de transférer tout mes dashboards.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://gauthierc.github.io/SlideELK/&#34;&gt;http://gauthierc.github.io/SlideELK/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
