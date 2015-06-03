@@ -10,14 +10,27 @@
     <atom:link href="http://gauthierc.github.io/tags/etcd/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Slide CoreOS</title>
+      <title>Présentation CoreOS</title>
       <link>http://gauthierc.github.io/post/slidecoreos/</link>
       <pubDate>Mon, 01 Jun 2015 16:57:33 +0200</pubDate>
       
       <guid>http://gauthierc.github.io/post/slidecoreos/</guid>
-      <description>&lt;p&gt;J&amp;rsquo;ai mis en ligne les slides CoreOS que je présenterai à Nantes le 5 juin 2015. Je ne suis pas sûr de tenir dans les 60 minutes qui me sont allouées.&lt;/p&gt;
+      <description>&lt;p&gt;J&amp;rsquo;ai mis en ligne les slides CoreOS que je présenterai à Nantes le 5 juin 2015. Je ne suis pas sûr de tenir dans les 50 minutes qui me sont allouées.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://gauthierc.github.io/SlideCoreOS/&#34;&gt;http://gauthierc.github.io/SlideCoreOS/&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://gauthierc.github.io/SlideCoreOS/&#34;&gt;http://gauthierc.github.io/SlideCoreOS/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;La plateforme CoreOS est pour moi intéressante pour plusieurs points:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Logiciel libre.&lt;/li&gt;
+&lt;li&gt;Facile et rapide à déployer.&lt;/li&gt;
+&lt;li&gt;Innovant sans pour autant demander un investissement trop important des équipes d&amp;rsquo;exploitation.&lt;/li&gt;
+&lt;li&gt;Un support pour ceux qui le désire.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Dans ma présentation, je parle rapidement de la montée de version de CoreOS. Le type d&amp;rsquo;installation que j&amp;rsquo;utilise ne nécessite pas de passer par l&amp;rsquo;outil de mise à jour fournit par le support. Ce dernier gère une double partition d&amp;rsquo;installation afin de basculer sur la version précédente en cas de problème. Ici, rien d&amp;rsquo;aussi compliqué, chaque serveur CoreOS boot en ipxe et va chercher son image. En cas de problème il suffit de spécifier une autre image dans le fichier de configuration et de rebooter le serveur.&lt;/p&gt;
 </description>
     </item>
     
