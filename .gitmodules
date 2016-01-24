@@ -7,3 +7,6 @@
 [submodule "SlideCoreOS"]
 	path = SlideCoreOS
 	url = https://github.com/gauthierc/SlideCoreOS
+[submodule "SlideDockerMicroservices"]
+	path = SlideDockerMicroservices
+	url = https://github.com/gauthierc/SlideDockerMicroservices.git

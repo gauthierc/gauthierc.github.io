@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cloud on Le Blog de Gauthier</title>
-    <link>http://gauthierc.github.io/tags/cloud/</link>
-    <description>Recent content in Cloud on Le Blog de Gauthier</description>
+    <title>Docker on Le Blog de Gauthier</title>
+    <link>http://gauthierc.github.io/tags/docker/</link>
+    <description>Recent content in Docker on Le Blog de Gauthier</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
     <lastBuildDate>Wed, 20 Jan 2016 18:10:45 +0100</lastBuildDate>
-    <atom:link href="http://gauthierc.github.io/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://gauthierc.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Présentation Docker Microservices</title>
@@ -20,19 +20,6 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://gauthierc.github.io/SlideDockerMicroservices/&#34;&gt;http://gauthierc.github.io/SlideDockerMicroservices/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Présentation Virtualisation CLoud</title>
-      <link>http://gauthierc.github.io/post/slidevirtu/</link>
-      <pubDate>Thu, 22 Jan 2015 09:30:00 +0100</pubDate>
-      
-      <guid>http://gauthierc.github.io/post/slidevirtu/</guid>
-      <description>&lt;p&gt;Voici une petite présentation sur les concepts de la virtualisation et sur le cloud en général.
-Cette présentation a été donné à des étudiants, j&amp;rsquo;ai l&amp;rsquo;impression que le personnel de l&amp;rsquo;université et les chercheurs présents dans la salle étaient beaucoup plus intéressé par mon discours.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://gauthierc.github.io/SlideVirtu/&#34;&gt;http://gauthierc.github.io/SlideVirtu/&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

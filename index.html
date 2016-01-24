@@ -86,6 +86,198 @@
 		<div class="entry-meta">
 			<span class="cat-links">
                 
+                <a href="http://gauthierc.github.io//categories/haproxy/index.html" rel="category">Haproxy</a>
+                
+			</span>
+		</div>
+
+		<h1 class="entry-title">Let&#39;s Encrypt avec Haproxy</h1>
+
+		<div class="entry-meta">
+			<span class="entry-date">
+				<a href="http://gauthierc.github.io/post/letsencrypt-haproxy//index.html" rel="bookmark">
+					<time class="entry-date" datetime="2016-01-24 18:39:12 &#43;0100 CET">
+						January 24
+					</time>
+				</a>
+			</span>
+		</div>
+
+	</header>
+	
+	<div class="entry-content">
+		
+
+<p>Voici la documentation qui m&rsquo;a permis de mettre en place Let&rsquo;s Encrypt avec Haproxy.</p>
+
+<p>Sources:
+ * <a href="https://coolaj86.com/articles/lets-encrypt-with-haproxy/">https://coolaj86.com/articles/lets-encrypt-with-haproxy/</a>
+ * <a href="https://blog.infomee.fr/p/letsencrypt-haproxy">https://blog.infomee.fr/p/letsencrypt-haproxy</a></p>
+
+<h1 id="principe:c30dc1d4818827fbc538c272551afcf9">Principe</h1>
+
+<p>Let&rsquo;s Encrypt permet de générer un certificat valide de façon automatique. Ce certificat a une durée de validité de 3 mois. Il faut donc le renouveler très régulièrement.
+Pour fonctionner letsencrypt a besoin d&rsquo;un serveur web, dans notre cas haproxy est juste un proxy, ce n&rsquo;est pas lui qui fournit les pages, mais les serveurs web des backends.
+le script letsencrypt a besoin de créer un fichier pour le challenge dans le répertoire d&rsquo;un serveur web. Le chemin étant facilement identifiable, nous allons créer un acl sur haproxy pour renvoyer les pages letsencrypt sur un serveur apache en particulier.</p>
+
+<h1 id="installation-de-let-s-encrypt:c30dc1d4818827fbc538c272551afcf9">Installation de Let&rsquo;s Encrypt</h1>
+
+<p>Il n&rsquo;existe pas actuellement de packet debian de Let&rsquo;s Encrypt pour les debian avant Stretch (actuellement en testing). Il est donc nécessaire de procéder à l&rsquo;installation depuis les sources.</p>
+
+<pre><code>git clone https://github.com/letsencrypt/letsencrypt
+cd letsencrypt
+./letsencrypt-auto
+</code></pre>
+
+<p>Le script d&rsquo;installation va créer une arborescence /root/.local/share/letsencrypt/ et y installer le logiciel.
+Par soucis de simplicité il faut ensuite aller dans /usr/sbin et créer un lien avec la commande :</p>
+
+<pre><code>ln -s /root/.local/share/letsencrypt/bin/letsencrypt 
+</code></pre>
+
+<h1 id="configuration-d-apache:c30dc1d4818827fbc538c272551afcf9">Configuration d&rsquo;Apache</h1>
+
+<p>Nous avons besoin d&rsquo;un serveur web pour fournir la page du challenge. Nous allons configurer Apache pour qu&rsquo;il écoute sur 127.0.0.1:1080. Le documentRoot sera /var/www/letsencrypt.request/.</p>
+
+<p>Fichier /etc/apache/ports.conf:
+    Listen 127.0.0.1:1080</p>
+
+<p>Fichier /etc/apache/sites-available/letsencrypt.conf:</p>
+
+<pre><code>&lt;VirtualHost *:1080&gt;
+  ServerName letsencrypt.request
+  DocumentRoot /var/www/letsencrypt.request
+&lt;/VirtualHost&gt;
+</code></pre>
+
+<p>Activer le nouveau site et désactiver le site par défaut :</p>
+
+<pre><code>a2ensite letsencrypt
+/etc/init.d/apache2 restart
+</code></pre>
+
+<h1 id="configuration-de-haproxy:c30dc1d4818827fbc538c272551afcf9">Configuration de Haproxy</h1>
+
+<p>Prenons le cas où nous n&rsquo;avons qu&rsquo;une seul ip et donc qu&rsquo;un seul frontend haproxy pour le http et un autre pour le https:</p>
+
+<pre><code>frontend ft_http-in
+    option http-keep-alive
+    compression algo gzip
+    compression type text/html text/plain text/css application/x-javascript
+    option      httplog
+    bind *:80
+    acl letsencrypt_check path_beg /.well-known/acme-challenge
+    # ... les autres acl
+    use_backend letsencrypt_backend if letsencrypt_check
+    # ... les autres use_backend
+
+frontend https-in
+    bind *:443 ssl crt /etc/ssl/letsencrypt
+    tcp-request inspect-delay 5s
+    tcp-request content accept if { req.ssl_hello_type 1 }
+    acl letsencrypt_check path_beg /.well-known/acme-challenge
+    # ... les autres acl
+    use_backend letsencrypt_backend if letsencrypt_check
+    # ... les autres use_backend
+
+backend letsencrypt_backend
+    http-request set-header Host letsencrypt.request
+    server apache 127.0.0.1:1080 check
+</code></pre>
+
+<h1 id="création-du-certificat:c30dc1d4818827fbc538c272551afcf9">Création du certificat</h1>
+
+<p>Création d&rsquo;un seul certificat:</p>
+
+<pre><code>letsencrypt certonly --email adminsys@mondomaine.org --webroot -w /var/www/letsencrypt.request/ -d www.mondomaine.org 
+</code></pre>
+
+<p>letsencrypt va créer une arborescence dans /etc/letsencrypt mais pour utiliser ces certificats dans haproxy il faut concaténer les fichiers dans un seul dans le répertoire /etc/ssl/letsencrypt avec le programme suivant:</p>
+
+<pre><code>#!/bin/bash
+for domain in $(ls /etc/letsencrypt/live); do 
+    cat /etc/letsencrypt/live/$domain/privkey.pem /etc/letsencrypt/live/$domain/fullchain.pem &gt; /etc/ssl/letsencrypt/$domain.pem
+done
+</code></pre>
+
+	</div>
+
+	<footer class="entry-meta">
+		<span class="tag-links">		
+			
+                <a href="http://gauthierc.github.io//tags/haproxy/index.html" rel="tag">haproxy</a>
+            
+                <a href="http://gauthierc.github.io//tags/letsencrypt/index.html" rel="tag">letsencrypt</a>
+            
+		</span>
+	</footer>
+</article> 
+			
+				<article class="post type-post status-publish format-standard hentry">
+
+	
+	<header class="entry-header">
+
+	
+
+		<div class="entry-meta">
+			<span class="cat-links">
+                
+                <a href="http://gauthierc.github.io//categories/silde/index.html" rel="category">Silde</a>
+                
+                <a href="http://gauthierc.github.io//categories/microservices/index.html" rel="category">Microservices</a>
+                
+                <a href="http://gauthierc.github.io//categories/docker/index.html" rel="category">Docker</a>
+                
+			</span>
+		</div>
+
+		<h1 class="entry-title">Présentation Docker Microservices</h1>
+
+		<div class="entry-meta">
+			<span class="entry-date">
+				<a href="http://gauthierc.github.io/post/slidemicroservices//index.html" rel="bookmark">
+					<time class="entry-date" datetime="2016-01-20 18:10:45 &#43;0100 CET">
+						January 20
+					</time>
+				</a>
+			</span>
+		</div>
+
+	</header>
+	
+	<div class="entry-content">
+		<p>Voici les slides de ma présentation du 19 janvier à Paris. La présentation prend plus d&rsquo;une heure. Le but de cette présentation est d&rsquo;amener les concepts d&rsquo;une architecture Microservices et de proposer des solutions pour la mise en production.</p>
+
+<ul>
+<li><a href="http://gauthierc.github.io/SlideDockerMicroservices/">http://gauthierc.github.io/SlideDockerMicroservices/</a></li>
+</ul>
+
+	</div>
+
+	<footer class="entry-meta">
+		<span class="tag-links">		
+			
+                <a href="http://gauthierc.github.io//tags/microservices/index.html" rel="tag">Microservices</a>
+            
+                <a href="http://gauthierc.github.io//tags/docker/index.html" rel="tag">Docker</a>
+            
+                <a href="http://gauthierc.github.io//tags/cloud/index.html" rel="tag">Cloud</a>
+            
+		</span>
+	</footer>
+</article> 
+			
+				<article class="post type-post status-publish format-standard hentry">
+
+	
+	<header class="entry-header">
+
+	
+
+		<div class="entry-meta">
+			<span class="cat-links">
+                
                 <a href="http://gauthierc.github.io//categories/elk/index.html" rel="category">elk</a>
                 
 			</span>
@@ -406,6 +598,14 @@ Cette présentation a été donné à des étudiants, j&rsquo;ai l&rsquo;impress
 		<ul>
 			
 			<li>
+				<a href="http://gauthierc.github.io/post/letsencrypt-haproxy//index.html">Let&#39;s Encrypt avec Haproxy</a>
+			</li>
+			
+			<li>
+				<a href="http://gauthierc.github.io/post/slidemicroservices//index.html">Présentation Docker Microservices</a>
+			</li>
+			
+			<li>
 				<a href="http://gauthierc.github.io/post/packetbeat//index.html">Packetbeat 1.0Beta1</a>
 			</li>
 			
@@ -415,14 +615,6 @@ Cette présentation a été donné à des étudiants, j&rsquo;ai l&rsquo;impress
 			
 			<li>
 				<a href="http://gauthierc.github.io/post/slideelk//index.html">Présentation ElasticSearch Logstash Kibana</a>
-			</li>
-			
-			<li>
-				<a href="http://gauthierc.github.io/post/slidevirtu//index.html">Présentation Virtualisation CLoud</a>
-			</li>
-			
-			<li>
-				<a href="http://gauthierc.github.io/post/welcome//index.html">Bienvenue</a>
 			</li>
 			
 		</ul>
@@ -444,7 +636,31 @@ Cette présentation a été donné à des étudiants, j&rsquo;ai l&rsquo;impress
 		
 		
 		<li class="cat-item">
+			<a href="http://gauthierc.github.io//categories/docker/index.html">Docker</a>
+		</li>
+
+		
+		
+		<li class="cat-item">
 			<a href="http://gauthierc.github.io//categories/elk/index.html">Elk</a>
+		</li>
+
+		
+		
+		<li class="cat-item">
+			<a href="http://gauthierc.github.io//categories/haproxy/index.html">Haproxy</a>
+		</li>
+
+		
+		
+		<li class="cat-item">
+			<a href="http://gauthierc.github.io//categories/microservices/index.html">Microservices</a>
+		</li>
+
+		
+		
+		<li class="cat-item">
+			<a href="http://gauthierc.github.io//categories/silde/index.html">Silde</a>
 		</li>
 
 		

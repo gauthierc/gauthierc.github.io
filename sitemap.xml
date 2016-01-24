@@ -3,8 +3,18 @@
   
   <url>
     <loc>http://gauthierc.github.io/</loc>
-    <lastmod>2015-06-09T20:35:27+02:00</lastmod>
+    <lastmod>2016-01-24T18:39:12+01:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gauthierc.github.io/post/letsencrypt-haproxy/</loc>
+    <lastmod>2016-01-24T18:39:12+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gauthierc.github.io/post/slidemicroservices/</loc>
+    <lastmod>2016-01-20T18:10:45+01:00</lastmod>
   </url>
   
   <url>

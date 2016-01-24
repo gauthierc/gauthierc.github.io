@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Le Blog de Gauthier</title>
+	<title>Présentation Docker Microservices &middot; Le Blog de Gauthier</title>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<!--[if lt IE 9]>
 	<script src="http://gauthierc.github.io//js/html5.js"></script>
@@ -75,12 +75,7 @@
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 
-			<header class="archive-header">
-				<h1 class="archive-title">Packetbeat Archive</h1>
-			</header>
-
-			
-				<article class="post type-post status-publish format-standard hentry">
+			<article class="post type-post status-publish format-standard hentry">
 
 	
 	<header class="entry-header">
@@ -90,18 +85,22 @@
 		<div class="entry-meta">
 			<span class="cat-links">
                 
-                <a href="http://gauthierc.github.io//categories/elk/index.html" rel="category">elk</a>
+                <a href="http://gauthierc.github.io//categories/silde/index.html" rel="category">Silde</a>
+                
+                <a href="http://gauthierc.github.io//categories/microservices/index.html" rel="category">Microservices</a>
+                
+                <a href="http://gauthierc.github.io//categories/docker/index.html" rel="category">Docker</a>
                 
 			</span>
 		</div>
 
-		<h1 class="entry-title">Packetbeat 1.0Beta1</h1>
+		<h1 class="entry-title">Présentation Docker Microservices</h1>
 
 		<div class="entry-meta">
 			<span class="entry-date">
-				<a href="http://gauthierc.github.io/post/packetbeat//index.html" rel="bookmark">
-					<time class="entry-date" datetime="2015-06-09 20:35:27 &#43;0200 CEST">
-						June 9
+				<a href="http://gauthierc.github.io/post/slidemicroservices//index.html" rel="bookmark">
+					<time class="entry-date" datetime="2016-01-20 18:10:45 &#43;0100 CET">
+						January 20
 					</time>
 				</a>
 			</span>
@@ -110,63 +109,31 @@
 	</header>
 	
 	<div class="entry-content">
-		
+		<p>Voici les slides de ma présentation du 19 janvier à Paris. La présentation prend plus d&rsquo;une heure. Le but de cette présentation est d&rsquo;amener les concepts d&rsquo;une architecture Microservices et de proposer des solutions pour la mise en production.</p>
 
-<h2 id="présentation:8168eefd0267b22b05c029b96196d811">Présentation</h2>
-
-<p>PacketBeat est un outil qui permet de capturer les flux réseaux (http, mysql, postgres, redis, thrift) et d&rsquo;envoyer le tout sur une base elasticsearch afin de pouvoir analyser l&rsquo;ensemble des requêtes via l&rsquo;interface kibana. Il est également capable d&rsquo;analyser les communications entre 2 processus d&rsquo;un même serveur.</p>
-
-<p>Ce produit a l&rsquo;avantage d&rsquo;être très facile à déployer, c&rsquo;est écrit en <a href="http://golang.org">Go</a> donc il a très peu de dépendance. Les paquets rpm et deb de Packetbeat ne fonctionne pas sur certaines vieilles distributions (CentOS5, Debian6), mais je n&rsquo;ai pas essayé de le recompiler sur celles-ci.</p>
-
-<p>L&rsquo;équipe de Packetbeat a rejoint <a href="https://www.elastic.co/blog/welcome-packetbeat-tudor-monica">elastic.co</a> le 27 mai 2015. Il est maintenant disponible en version 1.0-beta1.</p>
-
-<p>Cette version me semble nettement moins gourmande en cpu que les versions 0.4x que j&rsquo;avais testée précédemment. Je ne l&rsquo;avais pas encore mis en prod pour cette raison. Cette version est compatible Kibana4 une <a href="http://demo.elastic.co/packetbeat">démo</a> est consultable en ligne.</p>
-
-<h2 id="mise-en-place:8168eefd0267b22b05c029b96196d811">Mise en place</h2>
-
-<p>Dans un premier temps il faut installer elasticsearch (version 1.5 ou superieur) et kibana4.x.
-Ensuite sur chaque serveur que l&rsquo;on veut monitorer il faut <a href="https://www.elastic.co/downloads/beats/packetbeat">télécharger packetbeat</a> et l&rsquo;installer.</p>
-
-<p>Exemple sur Debian 64bits :</p>
-
-<pre><code class="language-bash">wget https://download.elastic.co/beats/packetbeat/packetbeat_1.0.0~Beta1_amd64.deb
-dpkg -i packetbeat_1.0.0~Beta1_amd64.deb
-</code></pre>
-
-<p>Enfin il faut éditer le fichier packetbeat.yml pour indiquer l&rsquo;adresse du serveur elasticsearch et les ports par protocole que l&rsquo;on veut monitorer.</p>
-
-<h2 id="configuration-des-dashboards:8168eefd0267b22b05c029b96196d811">Configuration des dashboards</h2>
-
-<p>Le <a href="https://github.com/elastic/packetbeat-dashboards">dépôt github</a> contient toutes les informations pour mettre en place les dashboards kibana4.</p>
-
-<pre><code class="language-bash">git clone https://github.com/elastic/packetbeat-dashboards.git
-cd packetbeat-dashboards
-./load.sh http://localhost:9200
-</code></pre>
-
-<h2 id="conclusion:8168eefd0267b22b05c029b96196d811">Conclusion</h2>
-
-<p>Vous n&rsquo;avez plus qu&rsquo;a attendre quelques minutes/heures/jours et découvrir pourquoi certaine application ne sont pas aussi rapide que souhaité. Peut-être qu&rsquo;une requête mysql ou postgres est plus longue que prévu.</p>
-
-<p>Bonne exploration.</p>
+<ul>
+<li><a href="http://gauthierc.github.io/SlideDockerMicroservices/">http://gauthierc.github.io/SlideDockerMicroservices/</a></li>
+</ul>
 
 	</div>
 
 	<footer class="entry-meta">
 		<span class="tag-links">		
 			
-                <a href="http://gauthierc.github.io//tags/elasticsearch/index.html" rel="tag">ElasticSearch</a>
+                <a href="http://gauthierc.github.io//tags/microservices/index.html" rel="tag">Microservices</a>
             
-                <a href="http://gauthierc.github.io//tags/kibana/index.html" rel="tag">kibana</a>
+                <a href="http://gauthierc.github.io//tags/docker/index.html" rel="tag">Docker</a>
             
-                <a href="http://gauthierc.github.io//tags/packetbeat/index.html" rel="tag">packetbeat</a>
+                <a href="http://gauthierc.github.io//tags/cloud/index.html" rel="tag">Cloud</a>
             
 		</span>
 	</footer>
 </article> 
+
 			
 		
 		</div>
+
 	</div>
 	<div id="secondary">
 
@@ -195,15 +162,6 @@ cd packetbeat-dashboards
 
 		<aside id="recent-posts-3" class="widget widget_recent_entries">
 
-	
-	<h1 class="widget-title">Recent Posts</h1>
-		<ul>
-			
-			<li>
-				<a href="http://gauthierc.github.io/post/packetbeat//index.html">Packetbeat 1.0Beta1</a>
-			</li>
-			
-		</ul>
 	
 </aside>
 
