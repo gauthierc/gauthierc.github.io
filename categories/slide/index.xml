@@ -6,8 +6,22 @@
     <description>Recent content in Slide on Le Blog de Gauthier</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Mon, 01 Jun 2015 16:57:33 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 20 Jan 2016 18:10:45 +0100</lastBuildDate>
     <atom:link href="http://gauthierc.github.io/categories/slide/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Présentation Docker Microservices</title>
+      <link>http://gauthierc.github.io/post/slidemicroservices/</link>
+      <pubDate>Wed, 20 Jan 2016 18:10:45 +0100</pubDate>
+      
+      <guid>http://gauthierc.github.io/post/slidemicroservices/</guid>
+      <description>&lt;p&gt;Voici les slides de ma présentation du 19 janvier à Paris. La présentation prend plus d&amp;rsquo;une heure. Le but de cette présentation est d&amp;rsquo;amener les concepts d&amp;rsquo;une architecture Microservices et de proposer des solutions pour la mise en production.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://gauthierc.github.io/SlideDockerMicroservices/&#34;&gt;http://gauthierc.github.io/SlideDockerMicroservices/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Présentation CoreOS</title>
