@@ -121,13 +121,13 @@
 <li><a href="https://blog.infomee.fr/p/letsencrypt-haproxy">https://blog.infomee.fr/p/letsencrypt-haproxy</a></li>
 </ul>
 
-<h1 id="principe:c30dc1d4818827fbc538c272551afcf9">Principe</h1>
+<h1 id="principe">Principe</h1>
 
 <p>Let&rsquo;s Encrypt permet de générer un certificat valide de façon automatique. Ce certificat a une durée de validité de 3 mois. Il faut donc le renouveler très régulièrement.
 Pour fonctionner letsencrypt a besoin d&rsquo;un serveur web, dans notre cas haproxy est juste un proxy, ce n&rsquo;est pas lui qui fournit les pages, mais les serveurs web des backends.
 le script letsencrypt a besoin de créer un fichier pour le challenge dans le répertoire d&rsquo;un serveur web. Le chemin étant facilement identifiable, nous allons créer un acl sur haproxy pour renvoyer les pages letsencrypt sur un serveur apache en particulier.</p>
 
-<h1 id="installation-de-let-s-encrypt:c30dc1d4818827fbc538c272551afcf9">Installation de Let&rsquo;s Encrypt</h1>
+<h1 id="installation-de-let-s-encrypt">Installation de Let&rsquo;s Encrypt</h1>
 
 <p>Il n&rsquo;existe pas actuellement de packet debian de Let&rsquo;s Encrypt pour les debian avant Stretch (actuellement en testing). Il est donc nécessaire de procéder à l&rsquo;installation depuis les sources.</p>
 
@@ -142,7 +142,7 @@ Par soucis de simplicité il faut ensuite aller dans /usr/sbin et créer un lien
 <pre><code>ln -s /root/.local/share/letsencrypt/bin/letsencrypt 
 </code></pre>
 
-<h1 id="configuration-d-apache:c30dc1d4818827fbc538c272551afcf9">Configuration d&rsquo;Apache</h1>
+<h1 id="configuration-d-apache">Configuration d&rsquo;Apache</h1>
 
 <p>Nous avons besoin d&rsquo;un serveur web pour fournir la page du challenge. Nous allons configurer Apache pour qu&rsquo;il écoute sur 127.0.0.1:1080. Le documentRoot sera /var/www/letsencrypt.request/.</p>
 
@@ -163,7 +163,7 @@ Par soucis de simplicité il faut ensuite aller dans /usr/sbin et créer un lien
 /etc/init.d/apache2 restart
 </code></pre>
 
-<h1 id="configuration-de-haproxy:c30dc1d4818827fbc538c272551afcf9">Configuration de Haproxy</h1>
+<h1 id="configuration-de-haproxy">Configuration de Haproxy</h1>
 
 <p>Prenons le cas où nous n&rsquo;avons qu&rsquo;une seul ip et donc qu&rsquo;un seul frontend haproxy pour le http et un autre pour le https:</p>
 
@@ -192,7 +192,7 @@ backend letsencrypt_backend
     server apache 127.0.0.1:1080 check
 </code></pre>
 
-<h1 id="création-du-certificat:c30dc1d4818827fbc538c272551afcf9">Création du certificat</h1>
+<h1 id="création-du-certificat">Création du certificat</h1>
 
 <p>Création d&rsquo;un seul certificat:</p>
 
@@ -283,7 +283,7 @@ done
 		
 		
 		<li class="cat-item">
-			<a href="http://gauthierc.github.io//categories/elk/index.html">Elk</a>
+			<a href="http://gauthierc.github.io//categories/elasticsearch/index.html">Elasticsearch</a>
 		</li>
 
 		

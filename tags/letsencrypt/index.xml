@@ -26,13 +26,13 @@
 &lt;li&gt;&lt;a href=&#34;https://blog.infomee.fr/p/letsencrypt-haproxy&#34;&gt;https://blog.infomee.fr/p/letsencrypt-haproxy&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&#34;principe:c30dc1d4818827fbc538c272551afcf9&#34;&gt;Principe&lt;/h1&gt;
+&lt;h1 id=&#34;principe&#34;&gt;Principe&lt;/h1&gt;
 
 &lt;p&gt;Let&amp;rsquo;s Encrypt permet de générer un certificat valide de façon automatique. Ce certificat a une durée de validité de 3 mois. Il faut donc le renouveler très régulièrement.
 Pour fonctionner letsencrypt a besoin d&amp;rsquo;un serveur web, dans notre cas haproxy est juste un proxy, ce n&amp;rsquo;est pas lui qui fournit les pages, mais les serveurs web des backends.
 le script letsencrypt a besoin de créer un fichier pour le challenge dans le répertoire d&amp;rsquo;un serveur web. Le chemin étant facilement identifiable, nous allons créer un acl sur haproxy pour renvoyer les pages letsencrypt sur un serveur apache en particulier.&lt;/p&gt;
 
-&lt;h1 id=&#34;installation-de-let-s-encrypt:c30dc1d4818827fbc538c272551afcf9&#34;&gt;Installation de Let&amp;rsquo;s Encrypt&lt;/h1&gt;
+&lt;h1 id=&#34;installation-de-let-s-encrypt&#34;&gt;Installation de Let&amp;rsquo;s Encrypt&lt;/h1&gt;
 
 &lt;p&gt;Il n&amp;rsquo;existe pas actuellement de packet debian de Let&amp;rsquo;s Encrypt pour les debian avant Stretch (actuellement en testing). Il est donc nécessaire de procéder à l&amp;rsquo;installation depuis les sources.&lt;/p&gt;
 
@@ -47,7 +47,7 @@ Par soucis de simplicité il faut ensuite aller dans /usr/sbin et créer un lien
 &lt;pre&gt;&lt;code&gt;ln -s /root/.local/share/letsencrypt/bin/letsencrypt 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h1 id=&#34;configuration-d-apache:c30dc1d4818827fbc538c272551afcf9&#34;&gt;Configuration d&amp;rsquo;Apache&lt;/h1&gt;
+&lt;h1 id=&#34;configuration-d-apache&#34;&gt;Configuration d&amp;rsquo;Apache&lt;/h1&gt;
 
 &lt;p&gt;Nous avons besoin d&amp;rsquo;un serveur web pour fournir la page du challenge. Nous allons configurer Apache pour qu&amp;rsquo;il écoute sur 127.0.0.1:1080. Le documentRoot sera /var/www/letsencrypt.request/.&lt;/p&gt;
 
@@ -68,7 +68,7 @@ Par soucis de simplicité il faut ensuite aller dans /usr/sbin et créer un lien
 /etc/init.d/apache2 restart
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h1 id=&#34;configuration-de-haproxy:c30dc1d4818827fbc538c272551afcf9&#34;&gt;Configuration de Haproxy&lt;/h1&gt;
+&lt;h1 id=&#34;configuration-de-haproxy&#34;&gt;Configuration de Haproxy&lt;/h1&gt;
 
 &lt;p&gt;Prenons le cas où nous n&amp;rsquo;avons qu&amp;rsquo;une seul ip et donc qu&amp;rsquo;un seul frontend haproxy pour le http et un autre pour le https:&lt;/p&gt;
 
@@ -97,7 +97,7 @@ backend letsencrypt_backend
     server apache 127.0.0.1:1080 check
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h1 id=&#34;création-du-certificat:c30dc1d4818827fbc538c272551afcf9&#34;&gt;Création du certificat&lt;/h1&gt;
+&lt;h1 id=&#34;création-du-certificat&#34;&gt;Création du certificat&lt;/h1&gt;
 
 &lt;p&gt;Création d&amp;rsquo;un seul certificat:&lt;/p&gt;
 

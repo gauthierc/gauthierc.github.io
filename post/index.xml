@@ -6,8 +6,48 @@
     <description>Recent content in Posts on Le Blog de Gauthier</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Sun, 24 Jan 2016 18:39:12 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jun 2016 20:10:45 +0200</lastBuildDate>
     <atom:link href="http://gauthierc.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Présentation Elastic Beats</title>
+      <link>http://gauthierc.github.io/post/slideelasticbeats/</link>
+      <pubDate>Sun, 05 Jun 2016 20:10:45 +0200</pubDate>
+      
+      <guid>http://gauthierc.github.io/post/slideelasticbeats/</guid>
+      <description>&lt;p&gt;Voici les slides de ma présentation du jeudi 26 mai à Caen. La présentation est suivie d&amp;rsquo;une démo avec Kibana, ElasticSearch, packetbeat, topbeat et dockerbeat.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://gauthierc.github.io/SlideElasticBeats/&#34;&gt;http://gauthierc.github.io/SlideElasticBeats/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Le docker-compose qui m&amp;rsquo;a permis de lancer la démo:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;elasticsearch-int:
+  image: elasticsearch
+  ports:
+    - 9200:9200
+  volumes:
+    - &amp;quot;/home/gauthier/esdata:/usr/share/elasticsearch/data&amp;quot;
+
+kibana-int:
+  image: kibana
+  ports:
+    - 5601:5601
+  environment:
+    - ELASTICSEARCH_URL=http://elasticsearch-int:9200
+  links:
+    - elasticsearch-int
+
+dockerbeat-int:
+  image: ingensi/dockerbeat
+  links:
+    - elasticsearch-int:elasticsearch
+  volumes:
+    - &amp;quot;/var/run/docker.sock:/var/run/docker.sock&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>Let&#39;s Encrypt avec Haproxy</title>
@@ -26,13 +66,13 @@
 &lt;li&gt;&lt;a href=&#34;https://blog.infomee.fr/p/letsencrypt-haproxy&#34;&gt;https://blog.infomee.fr/p/letsencrypt-haproxy&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&#34;principe:c30dc1d4818827fbc538c272551afcf9&#34;&gt;Principe&lt;/h1&gt;
+&lt;h1 id=&#34;principe&#34;&gt;Principe&lt;/h1&gt;
 
 &lt;p&gt;Let&amp;rsquo;s Encrypt permet de générer un certificat valide de façon automatique. Ce certificat a une durée de validité de 3 mois. Il faut donc le renouveler très régulièrement.
 Pour fonctionner letsencrypt a besoin d&amp;rsquo;un serveur web, dans notre cas haproxy est juste un proxy, ce n&amp;rsquo;est pas lui qui fournit les pages, mais les serveurs web des backends.
 le script letsencrypt a besoin de créer un fichier pour le challenge dans le répertoire d&amp;rsquo;un serveur web. Le chemin étant facilement identifiable, nous allons créer un acl sur haproxy pour renvoyer les pages letsencrypt sur un serveur apache en particulier.&lt;/p&gt;
 
-&lt;h1 id=&#34;installation-de-let-s-encrypt:c30dc1d4818827fbc538c272551afcf9&#34;&gt;Installation de Let&amp;rsquo;s Encrypt&lt;/h1&gt;
+&lt;h1 id=&#34;installation-de-let-s-encrypt&#34;&gt;Installation de Let&amp;rsquo;s Encrypt&lt;/h1&gt;
 
 &lt;p&gt;Il n&amp;rsquo;existe pas actuellement de packet debian de Let&amp;rsquo;s Encrypt pour les debian avant Stretch (actuellement en testing). Il est donc nécessaire de procéder à l&amp;rsquo;installation depuis les sources.&lt;/p&gt;
 
@@ -47,7 +87,7 @@ Par soucis de simplicité il faut ensuite aller dans /usr/sbin et créer un lien
 &lt;pre&gt;&lt;code&gt;ln -s /root/.local/share/letsencrypt/bin/letsencrypt 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h1 id=&#34;configuration-d-apache:c30dc1d4818827fbc538c272551afcf9&#34;&gt;Configuration d&amp;rsquo;Apache&lt;/h1&gt;
+&lt;h1 id=&#34;configuration-d-apache&#34;&gt;Configuration d&amp;rsquo;Apache&lt;/h1&gt;
 
 &lt;p&gt;Nous avons besoin d&amp;rsquo;un serveur web pour fournir la page du challenge. Nous allons configurer Apache pour qu&amp;rsquo;il écoute sur 127.0.0.1:1080. Le documentRoot sera /var/www/letsencrypt.request/.&lt;/p&gt;
 
@@ -68,7 +108,7 @@ Par soucis de simplicité il faut ensuite aller dans /usr/sbin et créer un lien
 /etc/init.d/apache2 restart
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h1 id=&#34;configuration-de-haproxy:c30dc1d4818827fbc538c272551afcf9&#34;&gt;Configuration de Haproxy&lt;/h1&gt;
+&lt;h1 id=&#34;configuration-de-haproxy&#34;&gt;Configuration de Haproxy&lt;/h1&gt;
 
 &lt;p&gt;Prenons le cas où nous n&amp;rsquo;avons qu&amp;rsquo;une seul ip et donc qu&amp;rsquo;un seul frontend haproxy pour le http et un autre pour le https:&lt;/p&gt;
 
@@ -97,7 +137,7 @@ backend letsencrypt_backend
     server apache 127.0.0.1:1080 check
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h1 id=&#34;création-du-certificat:c30dc1d4818827fbc538c272551afcf9&#34;&gt;Création du certificat&lt;/h1&gt;
+&lt;h1 id=&#34;création-du-certificat&#34;&gt;Création du certificat&lt;/h1&gt;
 
 &lt;p&gt;Création d&amp;rsquo;un seul certificat:&lt;/p&gt;
 
@@ -136,7 +176,7 @@ done
       <guid>http://gauthierc.github.io/post/packetbeat/</guid>
       <description>
 
-&lt;h2 id=&#34;présentation:8168eefd0267b22b05c029b96196d811&#34;&gt;Présentation&lt;/h2&gt;
+&lt;h2 id=&#34;présentation&#34;&gt;Présentation&lt;/h2&gt;
 
 &lt;p&gt;PacketBeat est un outil qui permet de capturer les flux réseaux (http, mysql, postgres, redis, thrift) et d&amp;rsquo;envoyer le tout sur une base elasticsearch afin de pouvoir analyser l&amp;rsquo;ensemble des requêtes via l&amp;rsquo;interface kibana. Il est également capable d&amp;rsquo;analyser les communications entre 2 processus d&amp;rsquo;un même serveur.&lt;/p&gt;
 
@@ -146,7 +186,7 @@ done
 
 &lt;p&gt;Cette version me semble nettement moins gourmande en cpu que les versions 0.4x que j&amp;rsquo;avais testée précédemment. Je ne l&amp;rsquo;avais pas encore mis en prod pour cette raison. Cette version est compatible Kibana4 une &lt;a href=&#34;http://demo.elastic.co/packetbeat&#34;&gt;démo&lt;/a&gt; est consultable en ligne.&lt;/p&gt;
 
-&lt;h2 id=&#34;mise-en-place:8168eefd0267b22b05c029b96196d811&#34;&gt;Mise en place&lt;/h2&gt;
+&lt;h2 id=&#34;mise-en-place&#34;&gt;Mise en place&lt;/h2&gt;
 
 &lt;p&gt;Dans un premier temps il faut installer elasticsearch (version 1.5 ou superieur) et kibana4.x.
 Ensuite sur chaque serveur que l&amp;rsquo;on veut monitorer il faut &lt;a href=&#34;https://www.elastic.co/downloads/beats/packetbeat&#34;&gt;télécharger packetbeat&lt;/a&gt; et l&amp;rsquo;installer.&lt;/p&gt;
@@ -159,7 +199,7 @@ dpkg -i packetbeat_1.0.0~Beta1_amd64.deb
 
 &lt;p&gt;Enfin il faut éditer le fichier packetbeat.yml pour indiquer l&amp;rsquo;adresse du serveur elasticsearch et les ports par protocole que l&amp;rsquo;on veut monitorer.&lt;/p&gt;
 
-&lt;h2 id=&#34;configuration-des-dashboards:8168eefd0267b22b05c029b96196d811&#34;&gt;Configuration des dashboards&lt;/h2&gt;
+&lt;h2 id=&#34;configuration-des-dashboards&#34;&gt;Configuration des dashboards&lt;/h2&gt;
 
 &lt;p&gt;Le &lt;a href=&#34;https://github.com/elastic/packetbeat-dashboards&#34;&gt;dépôt github&lt;/a&gt; contient toutes les informations pour mettre en place les dashboards kibana4.&lt;/p&gt;
 
@@ -168,7 +208,7 @@ cd packetbeat-dashboards
 ./load.sh http://localhost:9200
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;conclusion:8168eefd0267b22b05c029b96196d811&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;Vous n&amp;rsquo;avez plus qu&amp;rsquo;a attendre quelques minutes/heures/jours et découvrir pourquoi certaine application ne sont pas aussi rapide que souhaité. Peut-être qu&amp;rsquo;une requête mysql ou postgres est plus longue que prévu.&lt;/p&gt;
 

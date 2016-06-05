@@ -17,7 +17,7 @@
       <guid>http://gauthierc.github.io/post/packetbeat/</guid>
       <description>
 
-&lt;h2 id=&#34;présentation:8168eefd0267b22b05c029b96196d811&#34;&gt;Présentation&lt;/h2&gt;
+&lt;h2 id=&#34;présentation&#34;&gt;Présentation&lt;/h2&gt;
 
 &lt;p&gt;PacketBeat est un outil qui permet de capturer les flux réseaux (http, mysql, postgres, redis, thrift) et d&amp;rsquo;envoyer le tout sur une base elasticsearch afin de pouvoir analyser l&amp;rsquo;ensemble des requêtes via l&amp;rsquo;interface kibana. Il est également capable d&amp;rsquo;analyser les communications entre 2 processus d&amp;rsquo;un même serveur.&lt;/p&gt;
 
@@ -27,7 +27,7 @@
 
 &lt;p&gt;Cette version me semble nettement moins gourmande en cpu que les versions 0.4x que j&amp;rsquo;avais testée précédemment. Je ne l&amp;rsquo;avais pas encore mis en prod pour cette raison. Cette version est compatible Kibana4 une &lt;a href=&#34;http://demo.elastic.co/packetbeat&#34;&gt;démo&lt;/a&gt; est consultable en ligne.&lt;/p&gt;
 
-&lt;h2 id=&#34;mise-en-place:8168eefd0267b22b05c029b96196d811&#34;&gt;Mise en place&lt;/h2&gt;
+&lt;h2 id=&#34;mise-en-place&#34;&gt;Mise en place&lt;/h2&gt;
 
 &lt;p&gt;Dans un premier temps il faut installer elasticsearch (version 1.5 ou superieur) et kibana4.x.
 Ensuite sur chaque serveur que l&amp;rsquo;on veut monitorer il faut &lt;a href=&#34;https://www.elastic.co/downloads/beats/packetbeat&#34;&gt;télécharger packetbeat&lt;/a&gt; et l&amp;rsquo;installer.&lt;/p&gt;
@@ -40,7 +40,7 @@ dpkg -i packetbeat_1.0.0~Beta1_amd64.deb
 
 &lt;p&gt;Enfin il faut éditer le fichier packetbeat.yml pour indiquer l&amp;rsquo;adresse du serveur elasticsearch et les ports par protocole que l&amp;rsquo;on veut monitorer.&lt;/p&gt;
 
-&lt;h2 id=&#34;configuration-des-dashboards:8168eefd0267b22b05c029b96196d811&#34;&gt;Configuration des dashboards&lt;/h2&gt;
+&lt;h2 id=&#34;configuration-des-dashboards&#34;&gt;Configuration des dashboards&lt;/h2&gt;
 
 &lt;p&gt;Le &lt;a href=&#34;https://github.com/elastic/packetbeat-dashboards&#34;&gt;dépôt github&lt;/a&gt; contient toutes les informations pour mettre en place les dashboards kibana4.&lt;/p&gt;
 
@@ -49,7 +49,7 @@ cd packetbeat-dashboards
 ./load.sh http://localhost:9200
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;conclusion:8168eefd0267b22b05c029b96196d811&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;Vous n&amp;rsquo;avez plus qu&amp;rsquo;a attendre quelques minutes/heures/jours et découvrir pourquoi certaine application ne sont pas aussi rapide que souhaité. Peut-être qu&amp;rsquo;une requête mysql ou postgres est plus longue que prévu.&lt;/p&gt;
 

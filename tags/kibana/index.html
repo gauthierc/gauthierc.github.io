@@ -90,7 +90,7 @@
 		<div class="entry-meta">
 			<span class="cat-links">
                 
-                <a href="http://gauthierc.github.io//categories/elk/index.html" rel="category">elk</a>
+                <a href="http://gauthierc.github.io//categories/elasticsearch/index.html" rel="category">ElasticSearch</a>
                 
 			</span>
 		</div>
@@ -112,7 +112,7 @@
 	<div class="entry-content">
 		
 
-<h2 id="présentation:8168eefd0267b22b05c029b96196d811">Présentation</h2>
+<h2 id="présentation">Présentation</h2>
 
 <p>PacketBeat est un outil qui permet de capturer les flux réseaux (http, mysql, postgres, redis, thrift) et d&rsquo;envoyer le tout sur une base elasticsearch afin de pouvoir analyser l&rsquo;ensemble des requêtes via l&rsquo;interface kibana. Il est également capable d&rsquo;analyser les communications entre 2 processus d&rsquo;un même serveur.</p>
 
@@ -122,7 +122,7 @@
 
 <p>Cette version me semble nettement moins gourmande en cpu que les versions 0.4x que j&rsquo;avais testée précédemment. Je ne l&rsquo;avais pas encore mis en prod pour cette raison. Cette version est compatible Kibana4 une <a href="http://demo.elastic.co/packetbeat">démo</a> est consultable en ligne.</p>
 
-<h2 id="mise-en-place:8168eefd0267b22b05c029b96196d811">Mise en place</h2>
+<h2 id="mise-en-place">Mise en place</h2>
 
 <p>Dans un premier temps il faut installer elasticsearch (version 1.5 ou superieur) et kibana4.x.
 Ensuite sur chaque serveur que l&rsquo;on veut monitorer il faut <a href="https://www.elastic.co/downloads/beats/packetbeat">télécharger packetbeat</a> et l&rsquo;installer.</p>
@@ -135,7 +135,7 @@ dpkg -i packetbeat_1.0.0~Beta1_amd64.deb
 
 <p>Enfin il faut éditer le fichier packetbeat.yml pour indiquer l&rsquo;adresse du serveur elasticsearch et les ports par protocole que l&rsquo;on veut monitorer.</p>
 
-<h2 id="configuration-des-dashboards:8168eefd0267b22b05c029b96196d811">Configuration des dashboards</h2>
+<h2 id="configuration-des-dashboards">Configuration des dashboards</h2>
 
 <p>Le <a href="https://github.com/elastic/packetbeat-dashboards">dépôt github</a> contient toutes les informations pour mettre en place les dashboards kibana4.</p>
 
@@ -144,7 +144,7 @@ cd packetbeat-dashboards
 ./load.sh http://localhost:9200
 </code></pre>
 
-<h2 id="conclusion:8168eefd0267b22b05c029b96196d811">Conclusion</h2>
+<h2 id="conclusion">Conclusion</h2>
 
 <p>Vous n&rsquo;avez plus qu&rsquo;a attendre quelques minutes/heures/jours et découvrir pourquoi certaine application ne sont pas aussi rapide que souhaité. Peut-être qu&rsquo;une requête mysql ou postgres est plus longue que prévu.</p>
 
@@ -177,7 +177,7 @@ cd packetbeat-dashboards
                 
                 <a href="http://gauthierc.github.io//categories/slide/index.html" rel="category">Slide</a>
                 
-                <a href="http://gauthierc.github.io//categories/elk/index.html" rel="category">ELK</a>
+                <a href="http://gauthierc.github.io//categories/elasticsearch/index.html" rel="category">ElasticSearch</a>
                 
 			</span>
 		</div>
@@ -285,7 +285,7 @@ cd packetbeat-dashboards
 		
 		
 		<li class="cat-item">
-			<a href="http://gauthierc.github.io//categories/elk/index.html">Elk</a>
+			<a href="http://gauthierc.github.io//categories/elasticsearch/index.html">Elasticsearch</a>
 		</li>
 
 		

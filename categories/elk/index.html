@@ -1,73 +1,3 @@
-<!DOCTYPE html>
-
-<html lang="fr-fr">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width">
-	<title>Le Blog de Gauthier</title>
-	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<!--[if lt IE 9]>
-	<script src="http://gauthierc.github.io//js/html5.js"></script>
-	<![endif]-->
-    
-    <link href="http://gauthierc.github.io//index.xml" rel="alternate" type="application/rss+xml" title="Le Blog de Gauthier" />
-
-    <link rel='stylesheet' id='twentyfourteen-lato-css'  href='//fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
-
-    <link rel='stylesheet' id='genericons-css' href='http://gauthierc.github.io//genericons/genericons.css' type='text/css' media='all' />
-	<link rel='stylesheet' id='twentyfourteen-style-css' href='http://gauthierc.github.io//css/style.css' type='text/css' media='all' />
-	
-	<script type='text/javascript' src='http://gauthierc.github.io//js/jquery/jquery.js'></script>
-	<script type='text/javascript' src='http://gauthierc.github.io//js/jquery/jquery-migrate.min.js'></script>
-	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
-</head>
-
-<body class="home blog masthead-fixed list-view full-width grid">
-<div id="page" class="hfeed site">
-	<header id="masthead" class="site-header" role="banner">
-		<div class="header-main">
-			<h1 class="site-title"><a href="http://gauthierc.github.io//index.html" rel="home">Le Blog de Gauthier</a></h1>
-
-			<div class="search-toggle">
-				<a href="#search-container" class="screen-reader-text">Search</a>
-			</div>
-
-			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
-				<button class="menu-toggle">Primary Menu</button>
-				<a class="screen-reader-text skip-link" href="#content">Skip to content</a>
-				<div class="nav-menu">
-					<ul>
-						
-					</ul>
-				</div>
-			</nav>
-		</div>
-
-		<div id="search-container" class="search-box-wrapper hide">
-			<div class="search-box">
-                <script type="text/javascript">
-    function site_search(obj) {
-    	var host = window.location.host;
-        obj.q.value = "site:" + host + " " + obj.ss_q.value;
-    }
-</script>
-
-<aside id="search-3" class="widget widget_search">
-	<form role="search" class="search-form" action="//www.google.com/search" method="get" onSubmit="site_search(this)">
-
-	<input name="q" type="hidden" />
-	    <label>
-	        <span class="screen-reader-text">Search for:</span>
-	        <input name="ss_q" type="text" placeholder="Search ..." class="search-field" />
-	    </label>
-	    <input type="submit" value="Search" class="search-submit" />
-	</form>
-</aside>
-			</div>
-		</div>
-	</header>
-
-	<div id="main" class="site-main">
 
 
 <div id="main-content" class="main-content">
@@ -86,84 +16,6 @@
 	<header class="entry-header">
 
 	
-
-		<div class="entry-meta">
-			<span class="cat-links">
-                
-                <a href="http://gauthierc.github.io//categories/elk/index.html" rel="category">elk</a>
-                
-			</span>
-		</div>
-
-		<h1 class="entry-title">Packetbeat 1.0Beta1</h1>
-
-		<div class="entry-meta">
-			<span class="entry-date">
-				<a href="http://gauthierc.github.io/post/packetbeat//index.html" rel="bookmark">
-					<time class="entry-date" datetime="2015-06-09 20:35:27 &#43;0200 CEST">
-						June 9
-					</time>
-				</a>
-			</span>
-		</div>
-
-	</header>
-	
-	<div class="entry-content">
-		
-
-<h2 id="présentation:8168eefd0267b22b05c029b96196d811">Présentation</h2>
-
-<p>PacketBeat est un outil qui permet de capturer les flux réseaux (http, mysql, postgres, redis, thrift) et d&rsquo;envoyer le tout sur une base elasticsearch afin de pouvoir analyser l&rsquo;ensemble des requêtes via l&rsquo;interface kibana. Il est également capable d&rsquo;analyser les communications entre 2 processus d&rsquo;un même serveur.</p>
-
-<p>Ce produit a l&rsquo;avantage d&rsquo;être très facile à déployer, c&rsquo;est écrit en <a href="http://golang.org">Go</a> donc il a très peu de dépendance. Les paquets rpm et deb de Packetbeat ne fonctionne pas sur certaines vieilles distributions (CentOS5, Debian6), mais je n&rsquo;ai pas essayé de le recompiler sur celles-ci.</p>
-
-<p>L&rsquo;équipe de Packetbeat a rejoint <a href="https://www.elastic.co/blog/welcome-packetbeat-tudor-monica">elastic.co</a> le 27 mai 2015. Il est maintenant disponible en version 1.0-beta1.</p>
-
-<p>Cette version me semble nettement moins gourmande en cpu que les versions 0.4x que j&rsquo;avais testée précédemment. Je ne l&rsquo;avais pas encore mis en prod pour cette raison. Cette version est compatible Kibana4 une <a href="http://demo.elastic.co/packetbeat">démo</a> est consultable en ligne.</p>
-
-<h2 id="mise-en-place:8168eefd0267b22b05c029b96196d811">Mise en place</h2>
-
-<p>Dans un premier temps il faut installer elasticsearch (version 1.5 ou superieur) et kibana4.x.
-Ensuite sur chaque serveur que l&rsquo;on veut monitorer il faut <a href="https://www.elastic.co/downloads/beats/packetbeat">télécharger packetbeat</a> et l&rsquo;installer.</p>
-
-<p>Exemple sur Debian 64bits :</p>
-
-<pre><code class="language-bash">wget https://download.elastic.co/beats/packetbeat/packetbeat_1.0.0~Beta1_amd64.deb
-dpkg -i packetbeat_1.0.0~Beta1_amd64.deb
-</code></pre>
-
-<p>Enfin il faut éditer le fichier packetbeat.yml pour indiquer l&rsquo;adresse du serveur elasticsearch et les ports par protocole que l&rsquo;on veut monitorer.</p>
-
-<h2 id="configuration-des-dashboards:8168eefd0267b22b05c029b96196d811">Configuration des dashboards</h2>
-
-<p>Le <a href="https://github.com/elastic/packetbeat-dashboards">dépôt github</a> contient toutes les informations pour mettre en place les dashboards kibana4.</p>
-
-<pre><code class="language-bash">git clone https://github.com/elastic/packetbeat-dashboards.git
-cd packetbeat-dashboards
-./load.sh http://localhost:9200
-</code></pre>
-
-<h2 id="conclusion:8168eefd0267b22b05c029b96196d811">Conclusion</h2>
-
-<p>Vous n&rsquo;avez plus qu&rsquo;a attendre quelques minutes/heures/jours et découvrir pourquoi certaine application ne sont pas aussi rapide que souhaité. Peut-être qu&rsquo;une requête mysql ou postgres est plus longue que prévu.</p>
-
-<p>Bonne exploration.</p>
-
-	</div>
-
-	<footer class="entry-meta">
-		<span class="tag-links">		
-			
-                <a href="http://gauthierc.github.io//tags/elasticsearch/index.html" rel="tag">ElasticSearch</a>
-            
-                <a href="http://gauthierc.github.io//tags/kibana/index.html" rel="tag">kibana</a>
-            
-                <a href="http://gauthierc.github.io//tags/packetbeat/index.html" rel="tag">packetbeat</a>
-            
-		</span>
-	</footer>
-</article> 
 			
 				<article class="post type-post status-publish format-standard hentry">
 
@@ -171,52 +23,6 @@ cd packetbeat-dashboards
 	<header class="entry-header">
 
 	
-
-		<div class="entry-meta">
-			<span class="cat-links">
-                
-                <a href="http://gauthierc.github.io//categories/slide/index.html" rel="category">Slide</a>
-                
-                <a href="http://gauthierc.github.io//categories/elk/index.html" rel="category">ELK</a>
-                
-			</span>
-		</div>
-
-		<h1 class="entry-title">Présentation ElasticSearch Logstash Kibana</h1>
-
-		<div class="entry-meta">
-			<span class="entry-date">
-				<a href="http://gauthierc.github.io/post/slideelk//index.html" rel="bookmark">
-					<time class="entry-date" datetime="2015-03-25 10:00:00 &#43;0200 &#43;0200">
-						March 25
-					</time>
-				</a>
-			</span>
-		</div>
-
-	</header>
-	
-	<div class="entry-content">
-		<p>Voici mes slides sur ElasticSearch Kibana et Logstash que j&rsquo;ai présenté lors de 2 conférences (une à Lille et l&rsquo;autre à Paris) en mars 2015. ElasticSearch est un super produit, par contre Kibana 4 est très différent de Kibana 3. Je n&rsquo;ai pas encore eu le temps de transférer tout mes dashboards.</p>
-
-<ul>
-<li><a href="http://gauthierc.github.io/SlideELK/">http://gauthierc.github.io/SlideELK/</a></li>
-</ul>
-
-	</div>
-
-	<footer class="entry-meta">
-		<span class="tag-links">		
-			
-                <a href="http://gauthierc.github.io//tags/elasticsearch/index.html" rel="tag">ElasticSearch</a>
-            
-                <a href="http://gauthierc.github.io//tags/kibana/index.html" rel="tag">kibana</a>
-            
-                <a href="http://gauthierc.github.io//tags/logstash/index.html" rel="tag">logstash</a>
-            
-		</span>
-	</footer>
-</article> 
 			
 		
 		</div>
@@ -270,47 +76,6 @@ cd packetbeat-dashboards
 
 	<ul>
 		
-		
-		
-		<li class="cat-item">
-			<a href="http://gauthierc.github.io//categories/coreos/index.html">Coreos</a>
-		</li>
-
-		
-		
-		<li class="cat-item">
-			<a href="http://gauthierc.github.io//categories/docker/index.html">Docker</a>
-		</li>
-
-		
-		
-		<li class="cat-item">
-			<a href="http://gauthierc.github.io//categories/elk/index.html">Elk</a>
-		</li>
-
-		
-		
-		<li class="cat-item">
-			<a href="http://gauthierc.github.io//categories/haproxy/index.html">Haproxy</a>
-		</li>
-
-		
-		
-		<li class="cat-item">
-			<a href="http://gauthierc.github.io//categories/microservices/index.html">Microservices</a>
-		</li>
-
-		
-		
-		<li class="cat-item">
-			<a href="http://gauthierc.github.io//categories/slide/index.html">Slide</a>
-		</li>
-
-		
-
-	</ul>
-
-</aside>
 
 	</div>
 
@@ -328,6 +93,4 @@ cd packetbeat-dashboards
 		</footer>
 	</div>
 
-	<script type='text/javascript' src='http://gauthierc.github.io//js/functions.js'></script>
-</body>
-</html>
+	<script type='text/javascript' src='

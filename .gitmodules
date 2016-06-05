@@ -10,3 +10,6 @@
 [submodule "SlideDockerMicroservices"]
 	path = SlideDockerMicroservices
 	url = https://github.com/gauthierc/SlideDockerMicroservices.git
+[submodule "SlideElasticBeats"]
+	path = SlideElasticBeats
+	url = https://github.com/gauthierc/SlideElasticBeats

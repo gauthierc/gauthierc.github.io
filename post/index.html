@@ -90,6 +90,83 @@
 		<div class="entry-meta">
 			<span class="cat-links">
                 
+                <a href="http://gauthierc.github.io//categories/slide/index.html" rel="category">Slide</a>
+                
+                <a href="http://gauthierc.github.io//categories/elasticsearch/index.html" rel="category">ElasticSearch</a>
+                
+			</span>
+		</div>
+
+		<h1 class="entry-title">Présentation Elastic Beats</h1>
+
+		<div class="entry-meta">
+			<span class="entry-date">
+				<a href="http://gauthierc.github.io/post/slideelasticbeats//index.html" rel="bookmark">
+					<time class="entry-date" datetime="2016-06-05 20:10:45 &#43;0200 CEST">
+						June 5
+					</time>
+				</a>
+			</span>
+		</div>
+
+	</header>
+	
+	<div class="entry-content">
+		<p>Voici les slides de ma présentation du jeudi 26 mai à Caen. La présentation est suivie d&rsquo;une démo avec Kibana, ElasticSearch, packetbeat, topbeat et dockerbeat.</p>
+
+<ul>
+<li><a href="http://gauthierc.github.io/SlideElasticBeats/">http://gauthierc.github.io/SlideElasticBeats/</a></li>
+</ul>
+
+<p>Le docker-compose qui m&rsquo;a permis de lancer la démo:</p>
+
+<pre><code>elasticsearch-int:
+  image: elasticsearch
+  ports:
+    - 9200:9200
+  volumes:
+    - &quot;/home/gauthier/esdata:/usr/share/elasticsearch/data&quot;
+
+kibana-int:
+  image: kibana
+  ports:
+    - 5601:5601
+  environment:
+    - ELASTICSEARCH_URL=http://elasticsearch-int:9200
+  links:
+    - elasticsearch-int
+
+dockerbeat-int:
+  image: ingensi/dockerbeat
+  links:
+    - elasticsearch-int:elasticsearch
+  volumes:
+    - &quot;/var/run/docker.sock:/var/run/docker.sock&quot;
+</code></pre>
+
+	</div>
+
+	<footer class="entry-meta">
+		<span class="tag-links">		
+			
+                <a href="http://gauthierc.github.io//tags/elasticsearch/index.html" rel="tag">ElasticSearch</a>
+            
+                <a href="http://gauthierc.github.io//tags/packerbeat/index.html" rel="tag">Packerbeat</a>
+            
+		</span>
+	</footer>
+</article> 
+			
+				<article class="post type-post status-publish format-standard hentry">
+
+	
+	<header class="entry-header">
+
+	
+
+		<div class="entry-meta">
+			<span class="cat-links">
+                
                 <a href="http://gauthierc.github.io//categories/haproxy/index.html" rel="category">Haproxy</a>
                 
 			</span>
@@ -121,13 +198,13 @@
 <li><a href="https://blog.infomee.fr/p/letsencrypt-haproxy">https://blog.infomee.fr/p/letsencrypt-haproxy</a></li>
 </ul>
 
-<h1 id="principe:c30dc1d4818827fbc538c272551afcf9">Principe</h1>
+<h1 id="principe">Principe</h1>
 
 <p>Let&rsquo;s Encrypt permet de générer un certificat valide de façon automatique. Ce certificat a une durée de validité de 3 mois. Il faut donc le renouveler très régulièrement.
 Pour fonctionner letsencrypt a besoin d&rsquo;un serveur web, dans notre cas haproxy est juste un proxy, ce n&rsquo;est pas lui qui fournit les pages, mais les serveurs web des backends.
 le script letsencrypt a besoin de créer un fichier pour le challenge dans le répertoire d&rsquo;un serveur web. Le chemin étant facilement identifiable, nous allons créer un acl sur haproxy pour renvoyer les pages letsencrypt sur un serveur apache en particulier.</p>
 
-<h1 id="installation-de-let-s-encrypt:c30dc1d4818827fbc538c272551afcf9">Installation de Let&rsquo;s Encrypt</h1>
+<h1 id="installation-de-let-s-encrypt">Installation de Let&rsquo;s Encrypt</h1>
 
 <p>Il n&rsquo;existe pas actuellement de packet debian de Let&rsquo;s Encrypt pour les debian avant Stretch (actuellement en testing). Il est donc nécessaire de procéder à l&rsquo;installation depuis les sources.</p>
 
@@ -142,7 +219,7 @@ Par soucis de simplicité il faut ensuite aller dans /usr/sbin et créer un lien
 <pre><code>ln -s /root/.local/share/letsencrypt/bin/letsencrypt 
 </code></pre>
 
-<h1 id="configuration-d-apache:c30dc1d4818827fbc538c272551afcf9">Configuration d&rsquo;Apache</h1>
+<h1 id="configuration-d-apache">Configuration d&rsquo;Apache</h1>
 
 <p>Nous avons besoin d&rsquo;un serveur web pour fournir la page du challenge. Nous allons configurer Apache pour qu&rsquo;il écoute sur 127.0.0.1:1080. Le documentRoot sera /var/www/letsencrypt.request/.</p>
 
@@ -163,7 +240,7 @@ Par soucis de simplicité il faut ensuite aller dans /usr/sbin et créer un lien
 /etc/init.d/apache2 restart
 </code></pre>
 
-<h1 id="configuration-de-haproxy:c30dc1d4818827fbc538c272551afcf9">Configuration de Haproxy</h1>
+<h1 id="configuration-de-haproxy">Configuration de Haproxy</h1>
 
 <p>Prenons le cas où nous n&rsquo;avons qu&rsquo;une seul ip et donc qu&rsquo;un seul frontend haproxy pour le http et un autre pour le https:</p>
 
@@ -192,7 +269,7 @@ backend letsencrypt_backend
     server apache 127.0.0.1:1080 check
 </code></pre>
 
-<h1 id="création-du-certificat:c30dc1d4818827fbc538c272551afcf9">Création du certificat</h1>
+<h1 id="création-du-certificat">Création du certificat</h1>
 
 <p>Création d&rsquo;un seul certificat:</p>
 
@@ -285,7 +362,7 @@ done
 		<div class="entry-meta">
 			<span class="cat-links">
                 
-                <a href="http://gauthierc.github.io//categories/elk/index.html" rel="category">elk</a>
+                <a href="http://gauthierc.github.io//categories/elasticsearch/index.html" rel="category">ElasticSearch</a>
                 
 			</span>
 		</div>
@@ -307,7 +384,7 @@ done
 	<div class="entry-content">
 		
 
-<h2 id="présentation:8168eefd0267b22b05c029b96196d811">Présentation</h2>
+<h2 id="présentation">Présentation</h2>
 
 <p>PacketBeat est un outil qui permet de capturer les flux réseaux (http, mysql, postgres, redis, thrift) et d&rsquo;envoyer le tout sur une base elasticsearch afin de pouvoir analyser l&rsquo;ensemble des requêtes via l&rsquo;interface kibana. Il est également capable d&rsquo;analyser les communications entre 2 processus d&rsquo;un même serveur.</p>
 
@@ -317,7 +394,7 @@ done
 
 <p>Cette version me semble nettement moins gourmande en cpu que les versions 0.4x que j&rsquo;avais testée précédemment. Je ne l&rsquo;avais pas encore mis en prod pour cette raison. Cette version est compatible Kibana4 une <a href="http://demo.elastic.co/packetbeat">démo</a> est consultable en ligne.</p>
 
-<h2 id="mise-en-place:8168eefd0267b22b05c029b96196d811">Mise en place</h2>
+<h2 id="mise-en-place">Mise en place</h2>
 
 <p>Dans un premier temps il faut installer elasticsearch (version 1.5 ou superieur) et kibana4.x.
 Ensuite sur chaque serveur que l&rsquo;on veut monitorer il faut <a href="https://www.elastic.co/downloads/beats/packetbeat">télécharger packetbeat</a> et l&rsquo;installer.</p>
@@ -330,7 +407,7 @@ dpkg -i packetbeat_1.0.0~Beta1_amd64.deb
 
 <p>Enfin il faut éditer le fichier packetbeat.yml pour indiquer l&rsquo;adresse du serveur elasticsearch et les ports par protocole que l&rsquo;on veut monitorer.</p>
 
-<h2 id="configuration-des-dashboards:8168eefd0267b22b05c029b96196d811">Configuration des dashboards</h2>
+<h2 id="configuration-des-dashboards">Configuration des dashboards</h2>
 
 <p>Le <a href="https://github.com/elastic/packetbeat-dashboards">dépôt github</a> contient toutes les informations pour mettre en place les dashboards kibana4.</p>
 
@@ -339,7 +416,7 @@ cd packetbeat-dashboards
 ./load.sh http://localhost:9200
 </code></pre>
 
-<h2 id="conclusion:8168eefd0267b22b05c029b96196d811">Conclusion</h2>
+<h2 id="conclusion">Conclusion</h2>
 
 <p>Vous n&rsquo;avez plus qu&rsquo;a attendre quelques minutes/heures/jours et découvrir pourquoi certaine application ne sont pas aussi rapide que souhaité. Peut-être qu&rsquo;une requête mysql ou postgres est plus longue que prévu.</p>
 
@@ -436,7 +513,7 @@ cd packetbeat-dashboards
                 
                 <a href="http://gauthierc.github.io//categories/slide/index.html" rel="category">Slide</a>
                 
-                <a href="http://gauthierc.github.io//categories/elk/index.html" rel="category">ELK</a>
+                <a href="http://gauthierc.github.io//categories/elasticsearch/index.html" rel="category">ElasticSearch</a>
                 
 			</span>
 		</div>
@@ -605,6 +682,10 @@ Cette présentation a été donné à des étudiants, j&rsquo;ai l&rsquo;impress
 		<ul>
 			
 			<li>
+				<a href="http://gauthierc.github.io/post/slideelasticbeats//index.html">Présentation Elastic Beats</a>
+			</li>
+			
+			<li>
 				<a href="http://gauthierc.github.io/post/letsencrypt-haproxy//index.html">Let&#39;s Encrypt avec Haproxy</a>
 			</li>
 			
@@ -618,10 +699,6 @@ Cette présentation a été donné à des étudiants, j&rsquo;ai l&rsquo;impress
 			
 			<li>
 				<a href="http://gauthierc.github.io/post/slidecoreos//index.html">Présentation CoreOS</a>
-			</li>
-			
-			<li>
-				<a href="http://gauthierc.github.io/post/slideelk//index.html">Présentation ElasticSearch Logstash Kibana</a>
 			</li>
 			
 		</ul>
@@ -649,7 +726,7 @@ Cette présentation a été donné à des étudiants, j&rsquo;ai l&rsquo;impress
 		
 		
 		<li class="cat-item">
-			<a href="http://gauthierc.github.io//categories/elk/index.html">Elk</a>
+			<a href="http://gauthierc.github.io//categories/elasticsearch/index.html">Elasticsearch</a>
 		</li>
 
 		
