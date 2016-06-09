@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Présentation Elastic Beats &middot; Le Blog de Gauthier</title>
+	<title>Le Blog de Gauthier</title>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<!--[if lt IE 9]>
 	<script src="https://gauthierc.github.io//js/html5.js"></script>
@@ -75,7 +75,12 @@
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 
-			<article class="post type-post status-publish format-standard hentry">
+			<header class="archive-header">
+				<h1 class="archive-title">Blog Archive</h1>
+			</header>
+
+			
+				<article class="post type-post status-publish format-standard hentry">
 
 	
 	<header class="entry-header">
@@ -85,20 +90,18 @@
 		<div class="entry-meta">
 			<span class="cat-links">
                 
-                <a href="https://gauthierc.github.io//categories/slide/index.html" rel="category">Slide</a>
-                
-                <a href="https://gauthierc.github.io//categories/elasticsearch/index.html" rel="category">ElasticSearch</a>
+                <a href="https://gauthierc.github.io//categories/blog/index.html" rel="category">Blog</a>
                 
 			</span>
 		</div>
 
-		<h1 class="entry-title">Présentation Elastic Beats</h1>
+		<h1 class="entry-title">Bienvenue</h1>
 
 		<div class="entry-meta">
 			<span class="entry-date">
-				<a href="https://gauthierc.github.io/post/slideelasticbeats//index.html" rel="bookmark">
-					<time class="entry-date" datetime="2016-06-05 20:10:45 &#43;0200 CEST">
-						June 5
+				<a href="https://gauthierc.github.io/post/welcome//index.html" rel="bookmark">
+					<time class="entry-date" datetime="2015-01-01 16:40:53 &#43;0200 &#43;0200">
+						January 1
 					</time>
 				</a>
 			</span>
@@ -107,55 +110,25 @@
 	</header>
 	
 	<div class="entry-content">
-		<p>Voici les slides de ma présentation du jeudi 26 mai à Caen. La présentation est suivie d&rsquo;une démo avec Kibana, ElasticSearch, packetbeat, topbeat et dockerbeat.</p>
+		<p>Bienvenue !</p>
 
-<ul>
-<li><a href="https://gauthierc.github.io/SlideElasticBeats/">https://gauthierc.github.io/SlideElasticBeats/</a></li>
-</ul>
+<p>Sur ce site, vous retrouverez toutes les actualités sur mes différents projets GitHub <a href="https://github.com/gauthierc">https://github.com/gauthierc</a></p>
 
-<p>Le docker-compose qui m&rsquo;a permis de lancer la démo:</p>
+<p>Je suis (entre autre) adminsys et j&rsquo;ai malheureusement pas beaucoup le temps de développer des applis. C&rsquo;est dommage car j&rsquo;ai plein d&rsquo;idée. En plus comme je ne programme pas beaucoup, je ne suis pas super efficace et donc cela me prends plus de temps.</p>
 
-<pre><code>elasticsearch-int:
-  image: elasticsearch
-  ports:
-    - 9200:9200
-  volumes:
-    - &quot;/home/gauthier/esdata:/usr/share/elasticsearch/data&quot;
-
-kibana-int:
-  image: kibana
-  ports:
-    - 5601:5601
-  environment:
-    - ELASTICSEARCH_URL=http://elasticsearch-int:9200
-  links:
-    - elasticsearch-int
-
-dockerbeat-int:
-  image: ingensi/dockerbeat
-  links:
-    - elasticsearch-int:elasticsearch
-  volumes:
-    - &quot;/var/run/docker.sock:/var/run/docker.sock&quot;
-</code></pre>
+<p>Actuellement je programme en <a href="https://golang.org">Go</a>, <a href="https://python.org">Python</a>, <a href="https://nodejs.org">NodeJS</a> et <a href="http://www.gnu.org/software/bash/">Bash</a> (bien sûr).</p>
 
 	</div>
 
 	<footer class="entry-meta">
 		<span class="tag-links">		
 			
-                <a href="https://gauthierc.github.io//tags/elasticsearch/index.html" rel="tag">ElasticSearch</a>
-            
-                <a href="https://gauthierc.github.io//tags/packetbeat/index.html" rel="tag">Packetbeat</a>
-            
 		</span>
 	</footer>
 </article> 
-
 			
 		
 		</div>
-
 	</div>
 	<div id="secondary">
 
@@ -184,6 +157,15 @@ dockerbeat-int:
 
 		<aside id="recent-posts-3" class="widget widget_recent_entries">
 
+	
+	<h1 class="widget-title">Recent Posts</h1>
+		<ul>
+			
+			<li>
+				<a href="https://gauthierc.github.io/post/welcome//index.html">Bienvenue</a>
+			</li>
+			
+		</ul>
 	
 </aside>
 

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Le Blog de Gauthier</title>
+    <link>https://gauthierc.github.io/categories/blog/</link>
+    <description>Recent content in Blog on Le Blog de Gauthier</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Thu, 01 Jan 2015 16:40:53 +0200</lastBuildDate>
+    <atom:link href="https://gauthierc.github.io/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Bienvenue</title>
+      <link>https://gauthierc.github.io/post/welcome/</link>
+      <pubDate>Thu, 01 Jan 2015 16:40:53 +0200</pubDate>
+      
+      <guid>https://gauthierc.github.io/post/welcome/</guid>
+      <description>&lt;p&gt;Bienvenue !&lt;/p&gt;
+
+&lt;p&gt;Sur ce site, vous retrouverez toutes les actualités sur mes différents projets GitHub &lt;a href=&#34;https://github.com/gauthierc&#34;&gt;https://github.com/gauthierc&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Je suis (entre autre) adminsys et j&amp;rsquo;ai malheureusement pas beaucoup le temps de développer des applis. C&amp;rsquo;est dommage car j&amp;rsquo;ai plein d&amp;rsquo;idée. En plus comme je ne programme pas beaucoup, je ne suis pas super efficace et donc cela me prends plus de temps.&lt;/p&gt;
+
+&lt;p&gt;Actuellement je programme en &lt;a href=&#34;https://golang.org&#34;&gt;Go&lt;/a&gt;, &lt;a href=&#34;https://python.org&#34;&gt;Python&lt;/a&gt;, &lt;a href=&#34;https://nodejs.org&#34;&gt;NodeJS&lt;/a&gt; et &lt;a href=&#34;http://www.gnu.org/software/bash/&#34;&gt;Bash&lt;/a&gt; (bien sûr).&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
