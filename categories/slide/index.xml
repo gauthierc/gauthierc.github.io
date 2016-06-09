@@ -18,7 +18,7 @@
       <description>&lt;p&gt;Voici les slides de ma présentation du jeudi 26 mai à Caen. La présentation est suivie d&amp;rsquo;une démo avec Kibana, ElasticSearch, packetbeat, topbeat et dockerbeat.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://gauthierc.github.io/SlideElasticBeats/&#34;&gt;http://gauthierc.github.io/SlideElasticBeats/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gauthierc.github.io/SlideElasticBeats/&#34;&gt;https://gauthierc.github.io/SlideElasticBeats/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Le docker-compose qui m&amp;rsquo;a permis de lancer la démo:&lt;/p&gt;
@@ -58,7 +58,7 @@ dockerbeat-int:
       <description>&lt;p&gt;Voici les slides de ma présentation du 19 janvier à Paris. La présentation prend plus d&amp;rsquo;une heure. Le but de cette présentation est d&amp;rsquo;amener les concepts d&amp;rsquo;une architecture Microservices et de proposer des solutions pour la mise en production.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://gauthierc.github.io/SlideDockerMicroservices/&#34;&gt;http://gauthierc.github.io/SlideDockerMicroservices/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gauthierc.github.io/SlideDockerMicroservices/&#34;&gt;https://gauthierc.github.io/SlideDockerMicroservices/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -72,7 +72,7 @@ dockerbeat-int:
       <description>&lt;p&gt;J&amp;rsquo;ai mis en ligne les slides CoreOS que je présenterai à Nantes le 5 juin 2015. Je ne suis pas sûr de tenir dans les 50 minutes qui me sont allouées.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://gauthierc.github.io/SlideCoreOS/&#34;&gt;http://gauthierc.github.io/SlideCoreOS/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gauthierc.github.io/SlideCoreOS/&#34;&gt;https://gauthierc.github.io/SlideCoreOS/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;La plateforme CoreOS est pour moi intéressante pour plusieurs points:&lt;/p&gt;
@@ -97,7 +97,7 @@ dockerbeat-int:
       <description>&lt;p&gt;Voici mes slides sur ElasticSearch Kibana et Logstash que j&amp;rsquo;ai présenté lors de 2 conférences (une à Lille et l&amp;rsquo;autre à Paris) en mars 2015. ElasticSearch est un super produit, par contre Kibana 4 est très différent de Kibana 3. Je n&amp;rsquo;ai pas encore eu le temps de transférer tout mes dashboards.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://gauthierc.github.io/SlideELK/&#34;&gt;http://gauthierc.github.io/SlideELK/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gauthierc.github.io/SlideELK/&#34;&gt;https://gauthierc.github.io/SlideELK/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -111,7 +111,7 @@ dockerbeat-int:
       <description>&lt;p&gt;Voici une petite présentation sur les concepts de la virtualisation et sur le cloud en général.
 Cette présentation a été donné à des étudiants, j&amp;rsquo;ai l&amp;rsquo;impression que le personnel de l&amp;rsquo;université et les chercheurs présents dans la salle étaient beaucoup plus intéressé par mon discours.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://gauthierc.github.io/SlideVirtu/&#34;&gt;http://gauthierc.github.io/SlideVirtu/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://gauthierc.github.io/SlideVirtu/&#34;&gt;https://gauthierc.github.io/SlideVirtu/&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

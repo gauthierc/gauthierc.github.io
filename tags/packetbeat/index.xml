@@ -18,7 +18,7 @@
       <description>&lt;p&gt;Voici les slides de ma présentation du jeudi 26 mai à Caen. La présentation est suivie d&amp;rsquo;une démo avec Kibana, ElasticSearch, packetbeat, topbeat et dockerbeat.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://gauthierc.github.io/SlideElasticBeats/&#34;&gt;http://gauthierc.github.io/SlideElasticBeats/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gauthierc.github.io/SlideElasticBeats/&#34;&gt;https://gauthierc.github.io/SlideElasticBeats/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Le docker-compose qui m&amp;rsquo;a permis de lancer la démo:&lt;/p&gt;
