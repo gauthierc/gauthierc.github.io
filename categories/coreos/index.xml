@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Coreos on Le Blog de Gauthier</title>
-    <link>http://gauthierc.github.io/categories/coreos/</link>
+    <link>https://gauthierc.github.io/categories/coreos/</link>
     <description>Recent content in Coreos on Le Blog de Gauthier</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
     <lastBuildDate>Mon, 01 Jun 2015 16:57:33 +0200</lastBuildDate>
-    <atom:link href="http://gauthierc.github.io/categories/coreos/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://gauthierc.github.io/categories/coreos/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Présentation CoreOS</title>
-      <link>http://gauthierc.github.io/post/slidecoreos/</link>
+      <link>https://gauthierc.github.io/post/slidecoreos/</link>
       <pubDate>Mon, 01 Jun 2015 16:57:33 +0200</pubDate>
       
-      <guid>http://gauthierc.github.io/post/slidecoreos/</guid>
+      <guid>https://gauthierc.github.io/post/slidecoreos/</guid>
       <description>&lt;p&gt;J&amp;rsquo;ai mis en ligne les slides CoreOS que je présenterai à Nantes le 5 juin 2015. Je ne suis pas sûr de tenir dans les 50 minutes qui me sont allouées.&lt;/p&gt;
 
 &lt;ul&gt;

@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Le Blog de Gauthier</title>
-    <link>http://gauthierc.github.io/</link>
+    <link>https://gauthierc.github.io/</link>
     <description>Recent content on Le Blog de Gauthier</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
     <lastBuildDate>Sun, 05 Jun 2016 20:10:45 +0200</lastBuildDate>
-    <atom:link href="http://gauthierc.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://gauthierc.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Présentation Elastic Beats</title>
-      <link>http://gauthierc.github.io/post/slideelasticbeats/</link>
+      <link>https://gauthierc.github.io/post/slideelasticbeats/</link>
       <pubDate>Sun, 05 Jun 2016 20:10:45 +0200</pubDate>
       
-      <guid>http://gauthierc.github.io/post/slideelasticbeats/</guid>
+      <guid>https://gauthierc.github.io/post/slideelasticbeats/</guid>
       <description>&lt;p&gt;Voici les slides de ma présentation du jeudi 26 mai à Caen. La présentation est suivie d&amp;rsquo;une démo avec Kibana, ElasticSearch, packetbeat, topbeat et dockerbeat.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -51,10 +51,10 @@ dockerbeat-int:
     
     <item>
       <title>Let&#39;s Encrypt avec Haproxy</title>
-      <link>http://gauthierc.github.io/post/letsencrypt-haproxy/</link>
+      <link>https://gauthierc.github.io/post/letsencrypt-haproxy/</link>
       <pubDate>Sun, 24 Jan 2016 18:39:12 +0100</pubDate>
       
-      <guid>http://gauthierc.github.io/post/letsencrypt-haproxy/</guid>
+      <guid>https://gauthierc.github.io/post/letsencrypt-haproxy/</guid>
       <description>
 
 &lt;p&gt;Voici la documentation qui m&amp;rsquo;a permis de mettre en place Let&amp;rsquo;s Encrypt avec Haproxy.&lt;/p&gt;
@@ -156,10 +156,10 @@ done
     
     <item>
       <title>Présentation Docker Microservices</title>
-      <link>http://gauthierc.github.io/post/slidemicroservices/</link>
+      <link>https://gauthierc.github.io/post/slidemicroservices/</link>
       <pubDate>Wed, 20 Jan 2016 18:10:45 +0100</pubDate>
       
-      <guid>http://gauthierc.github.io/post/slidemicroservices/</guid>
+      <guid>https://gauthierc.github.io/post/slidemicroservices/</guid>
       <description>&lt;p&gt;Voici les slides de ma présentation du 19 janvier à Paris. La présentation prend plus d&amp;rsquo;une heure. Le but de cette présentation est d&amp;rsquo;amener les concepts d&amp;rsquo;une architecture Microservices et de proposer des solutions pour la mise en production.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -170,10 +170,10 @@ done
     
     <item>
       <title>Packetbeat 1.0Beta1</title>
-      <link>http://gauthierc.github.io/post/packetbeat/</link>
+      <link>https://gauthierc.github.io/post/packetbeat/</link>
       <pubDate>Tue, 09 Jun 2015 20:35:27 +0200</pubDate>
       
-      <guid>http://gauthierc.github.io/post/packetbeat/</guid>
+      <guid>https://gauthierc.github.io/post/packetbeat/</guid>
       <description>
 
 &lt;h2 id=&#34;présentation&#34;&gt;Présentation&lt;/h2&gt;
@@ -218,10 +218,10 @@ cd packetbeat-dashboards
     
     <item>
       <title>Présentation CoreOS</title>
-      <link>http://gauthierc.github.io/post/slidecoreos/</link>
+      <link>https://gauthierc.github.io/post/slidecoreos/</link>
       <pubDate>Mon, 01 Jun 2015 16:57:33 +0200</pubDate>
       
-      <guid>http://gauthierc.github.io/post/slidecoreos/</guid>
+      <guid>https://gauthierc.github.io/post/slidecoreos/</guid>
       <description>&lt;p&gt;J&amp;rsquo;ai mis en ligne les slides CoreOS que je présenterai à Nantes le 5 juin 2015. Je ne suis pas sûr de tenir dans les 50 minutes qui me sont allouées.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -243,10 +243,10 @@ cd packetbeat-dashboards
     
     <item>
       <title>Présentation ElasticSearch Logstash Kibana</title>
-      <link>http://gauthierc.github.io/post/slideelk/</link>
+      <link>https://gauthierc.github.io/post/slideelk/</link>
       <pubDate>Wed, 25 Mar 2015 10:00:00 +0200</pubDate>
       
-      <guid>http://gauthierc.github.io/post/slideelk/</guid>
+      <guid>https://gauthierc.github.io/post/slideelk/</guid>
       <description>&lt;p&gt;Voici mes slides sur ElasticSearch Kibana et Logstash que j&amp;rsquo;ai présenté lors de 2 conférences (une à Lille et l&amp;rsquo;autre à Paris) en mars 2015. ElasticSearch est un super produit, par contre Kibana 4 est très différent de Kibana 3. Je n&amp;rsquo;ai pas encore eu le temps de transférer tout mes dashboards.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -257,10 +257,10 @@ cd packetbeat-dashboards
     
     <item>
       <title>Présentation Virtualisation CLoud</title>
-      <link>http://gauthierc.github.io/post/slidevirtu/</link>
+      <link>https://gauthierc.github.io/post/slidevirtu/</link>
       <pubDate>Thu, 22 Jan 2015 09:30:00 +0100</pubDate>
       
-      <guid>http://gauthierc.github.io/post/slidevirtu/</guid>
+      <guid>https://gauthierc.github.io/post/slidevirtu/</guid>
       <description>&lt;p&gt;Voici une petite présentation sur les concepts de la virtualisation et sur le cloud en général.
 Cette présentation a été donné à des étudiants, j&amp;rsquo;ai l&amp;rsquo;impression que le personnel de l&amp;rsquo;université et les chercheurs présents dans la salle étaient beaucoup plus intéressé par mon discours.&lt;/p&gt;
 
@@ -270,10 +270,10 @@ Cette présentation a été donné à des étudiants, j&amp;rsquo;ai l&amp;rsquo
     
     <item>
       <title>Bienvenue</title>
-      <link>http://gauthierc.github.io/post/welcome/</link>
+      <link>https://gauthierc.github.io/post/welcome/</link>
       <pubDate>Thu, 01 Jan 2015 16:40:53 +0200</pubDate>
       
-      <guid>http://gauthierc.github.io/post/welcome/</guid>
+      <guid>https://gauthierc.github.io/post/welcome/</guid>
       <description>&lt;p&gt;Bienvenue !&lt;/p&gt;
 
 &lt;p&gt;Sur ce site, vous retrouverez toutes les actualités sur mes différents projets GitHub &lt;a href=&#34;https://github.com/gauthierc&#34;&gt;https://github.com/gauthierc&lt;/a&gt;&lt;/p&gt;

@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Haproxy on Le Blog de Gauthier</title>
-    <link>http://gauthierc.github.io/categories/haproxy/</link>
+    <link>https://gauthierc.github.io/categories/haproxy/</link>
     <description>Recent content in Haproxy on Le Blog de Gauthier</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
     <lastBuildDate>Sun, 24 Jan 2016 18:39:12 +0100</lastBuildDate>
-    <atom:link href="http://gauthierc.github.io/categories/haproxy/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://gauthierc.github.io/categories/haproxy/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Let&#39;s Encrypt avec Haproxy</title>
-      <link>http://gauthierc.github.io/post/letsencrypt-haproxy/</link>
+      <link>https://gauthierc.github.io/post/letsencrypt-haproxy/</link>
       <pubDate>Sun, 24 Jan 2016 18:39:12 +0100</pubDate>
       
-      <guid>http://gauthierc.github.io/post/letsencrypt-haproxy/</guid>
+      <guid>https://gauthierc.github.io/post/letsencrypt-haproxy/</guid>
       <description>
 
 &lt;p&gt;Voici la documentation qui m&amp;rsquo;a permis de mettre en place Let&amp;rsquo;s Encrypt avec Haproxy.&lt;/p&gt;
