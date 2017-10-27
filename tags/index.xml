@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Le Blog de Gauthier</title>
+    <link>https://gauthierc.github.io/tags/</link>
+    <description>Recent content in Tags on Le Blog de Gauthier</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Wed, 20 Jan 2016 18:10:45 +0100</lastBuildDate>
+    
+	<atom:link href="https://gauthierc.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cloud</title>
+      <link>https://gauthierc.github.io/tags/cloud/</link>
+      <pubDate>Wed, 20 Jan 2016 18:10:45 +0100</pubDate>
+      
+      <guid>https://gauthierc.github.io/tags/cloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Coreos</title>
+      <link>https://gauthierc.github.io/tags/coreos/</link>
+      <pubDate>Mon, 01 Jun 2015 16:57:33 +0200</pubDate>
+      
+      <guid>https://gauthierc.github.io/tags/coreos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://gauthierc.github.io/tags/docker/</link>
+      <pubDate>Wed, 20 Jan 2016 18:10:45 +0100</pubDate>
+      
+      <guid>https://gauthierc.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Elasticsearch</title>
+      <link>https://gauthierc.github.io/tags/elasticsearch/</link>
+      <pubDate>Sun, 05 Jun 2016 20:10:45 +0200</pubDate>
+      
+      <guid>https://gauthierc.github.io/tags/elasticsearch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Etcd</title>
+      <link>https://gauthierc.github.io/tags/etcd/</link>
+      <pubDate>Mon, 01 Jun 2015 16:57:33 +0200</pubDate>
+      
+      <guid>https://gauthierc.github.io/tags/etcd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fleet</title>
+      <link>https://gauthierc.github.io/tags/fleet/</link>
+      <pubDate>Mon, 01 Jun 2015 16:57:33 +0200</pubDate>
+      
+      <guid>https://gauthierc.github.io/tags/fleet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>https://gauthierc.github.io/tags/git/</link>
+      <pubDate>Fri, 27 Oct 2017 20:15:00 +0200</pubDate>
+      
+      <guid>https://gauthierc.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Haproxy</title>
+      <link>https://gauthierc.github.io/tags/haproxy/</link>
+      <pubDate>Sun, 24 Jan 2016 18:39:12 +0100</pubDate>
+      
+      <guid>https://gauthierc.github.io/tags/haproxy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kibana</title>
+      <link>https://gauthierc.github.io/tags/kibana/</link>
+      <pubDate>Tue, 09 Jun 2015 20:35:27 +0200</pubDate>
+      
+      <guid>https://gauthierc.github.io/tags/kibana/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Letsencrypt</title>
+      <link>https://gauthierc.github.io/tags/letsencrypt/</link>
+      <pubDate>Sun, 24 Jan 2016 18:39:12 +0100</pubDate>
+      
+      <guid>https://gauthierc.github.io/tags/letsencrypt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Logstash</title>
+      <link>https://gauthierc.github.io/tags/logstash/</link>
+      <pubDate>Wed, 25 Mar 2015 10:00:00 +0200</pubDate>
+      
+      <guid>https://gauthierc.github.io/tags/logstash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Microservices</title>
+      <link>https://gauthierc.github.io/tags/microservices/</link>
+      <pubDate>Wed, 20 Jan 2016 18:10:45 +0100</pubDate>
+      
+      <guid>https://gauthierc.github.io/tags/microservices/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Packetbeat</title>
+      <link>https://gauthierc.github.io/tags/packetbeat/</link>
+      <pubDate>Sun, 05 Jun 2016 20:10:45 +0200</pubDate>
+      
+      <guid>https://gauthierc.github.io/tags/packetbeat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Virtualisation</title>
+      <link>https://gauthierc.github.io/tags/virtualisation/</link>
+      <pubDate>Thu, 22 Jan 2015 09:30:00 +0100</pubDate>
+      
+      <guid>https://gauthierc.github.io/tags/virtualisation/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

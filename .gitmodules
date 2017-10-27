@@ -13,3 +13,6 @@
 [submodule "SlideElasticBeats"]
 	path = SlideElasticBeats
 	url = https://github.com/gauthierc/SlideElasticBeats
+[submodule "SlideGit"]
+	path = SlideGit
+	url = https://github.com/gauthierc/SlideGit

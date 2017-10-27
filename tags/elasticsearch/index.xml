@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
     <lastBuildDate>Sun, 05 Jun 2016 20:10:45 +0200</lastBuildDate>
-    <atom:link href="https://gauthierc.github.io/tags/elasticsearch/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://gauthierc.github.io/tags/elasticsearch/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Présentation Elastic Beats</title>
@@ -15,38 +17,9 @@
       <pubDate>Sun, 05 Jun 2016 20:10:45 +0200</pubDate>
       
       <guid>https://gauthierc.github.io/post/slideelasticbeats/</guid>
-      <description>&lt;p&gt;Voici les slides de ma présentation du jeudi 26 mai à Caen. La présentation est suivie d&amp;rsquo;une démo avec Kibana, ElasticSearch, packetbeat, topbeat et dockerbeat.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://gauthierc.github.io/SlideElasticBeats/&#34;&gt;https://gauthierc.github.io/SlideElasticBeats/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Le docker-compose qui m&amp;rsquo;a permis de lancer la démo:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;elasticsearch-int:
-  image: elasticsearch
-  ports:
-    - 9200:9200
-  volumes:
-    - &amp;quot;/home/gauthier/esdata:/usr/share/elasticsearch/data&amp;quot;
-
-kibana-int:
-  image: kibana
-  ports:
-    - 5601:5601
-  environment:
-    - ELASTICSEARCH_URL=http://elasticsearch-int:9200
-  links:
-    - elasticsearch-int
-
-dockerbeat-int:
-  image: ingensi/dockerbeat
-  links:
-    - elasticsearch-int:elasticsearch
-  volumes:
-    - &amp;quot;/var/run/docker.sock:/var/run/docker.sock&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>Voici les slides de ma présentation du jeudi 26 mai à Caen. La présentation est suivie d&amp;rsquo;une démo avec Kibana, ElasticSearch, packetbeat, topbeat et dockerbeat.
+ https://gauthierc.github.io/SlideElasticBeats/  Le docker-compose qui m&amp;rsquo;a permis de lancer la démo:
+elasticsearch-int: image: elasticsearch ports: - 9200:9200 volumes: - &amp;quot;/home/gauthier/esdata:/usr/share/elasticsearch/data&amp;quot; kibana-int: image: kibana ports: - 5601:5601 environment: - ELASTICSEARCH_URL=http://elasticsearch-int:9200 links: - elasticsearch-int dockerbeat-int: image: ingensi/dockerbeat links: - elasticsearch-int:elasticsearch volumes: - &amp;quot;/var/run/docker.sock:/var/run/docker.sock&amp;quot;  </description>
     </item>
     
     <item>
@@ -55,46 +28,8 @@ dockerbeat-int:
       <pubDate>Tue, 09 Jun 2015 20:35:27 +0200</pubDate>
       
       <guid>https://gauthierc.github.io/post/packetbeat/</guid>
-      <description>
-
-&lt;h2 id=&#34;présentation&#34;&gt;Présentation&lt;/h2&gt;
-
-&lt;p&gt;PacketBeat est un outil qui permet de capturer les flux réseaux (http, mysql, postgres, redis, thrift) et d&amp;rsquo;envoyer le tout sur une base elasticsearch afin de pouvoir analyser l&amp;rsquo;ensemble des requêtes via l&amp;rsquo;interface kibana. Il est également capable d&amp;rsquo;analyser les communications entre 2 processus d&amp;rsquo;un même serveur.&lt;/p&gt;
-
-&lt;p&gt;Ce produit a l&amp;rsquo;avantage d&amp;rsquo;être très facile à déployer, c&amp;rsquo;est écrit en &lt;a href=&#34;http://golang.org&#34;&gt;Go&lt;/a&gt; donc il a très peu de dépendance. Les paquets rpm et deb de Packetbeat ne fonctionne pas sur certaines vieilles distributions (CentOS5, Debian6), mais je n&amp;rsquo;ai pas essayé de le recompiler sur celles-ci.&lt;/p&gt;
-
-&lt;p&gt;L&amp;rsquo;équipe de Packetbeat a rejoint &lt;a href=&#34;https://www.elastic.co/blog/welcome-packetbeat-tudor-monica&#34;&gt;elastic.co&lt;/a&gt; le 27 mai 2015. Il est maintenant disponible en version 1.0-beta1.&lt;/p&gt;
-
-&lt;p&gt;Cette version me semble nettement moins gourmande en cpu que les versions 0.4x que j&amp;rsquo;avais testée précédemment. Je ne l&amp;rsquo;avais pas encore mis en prod pour cette raison. Cette version est compatible Kibana4 une &lt;a href=&#34;http://demo.elastic.co/packetbeat&#34;&gt;démo&lt;/a&gt; est consultable en ligne.&lt;/p&gt;
-
-&lt;h2 id=&#34;mise-en-place&#34;&gt;Mise en place&lt;/h2&gt;
-
-&lt;p&gt;Dans un premier temps il faut installer elasticsearch (version 1.5 ou superieur) et kibana4.x.
-Ensuite sur chaque serveur que l&amp;rsquo;on veut monitorer il faut &lt;a href=&#34;https://www.elastic.co/downloads/beats/packetbeat&#34;&gt;télécharger packetbeat&lt;/a&gt; et l&amp;rsquo;installer.&lt;/p&gt;
-
-&lt;p&gt;Exemple sur Debian 64bits :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget https://download.elastic.co/beats/packetbeat/packetbeat_1.0.0~Beta1_amd64.deb
-dpkg -i packetbeat_1.0.0~Beta1_amd64.deb
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Enfin il faut éditer le fichier packetbeat.yml pour indiquer l&amp;rsquo;adresse du serveur elasticsearch et les ports par protocole que l&amp;rsquo;on veut monitorer.&lt;/p&gt;
-
-&lt;h2 id=&#34;configuration-des-dashboards&#34;&gt;Configuration des dashboards&lt;/h2&gt;
-
-&lt;p&gt;Le &lt;a href=&#34;https://github.com/elastic/packetbeat-dashboards&#34;&gt;dépôt github&lt;/a&gt; contient toutes les informations pour mettre en place les dashboards kibana4.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git clone https://github.com/elastic/packetbeat-dashboards.git
-cd packetbeat-dashboards
-./load.sh http://localhost:9200
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;Vous n&amp;rsquo;avez plus qu&amp;rsquo;a attendre quelques minutes/heures/jours et découvrir pourquoi certaine application ne sont pas aussi rapide que souhaité. Peut-être qu&amp;rsquo;une requête mysql ou postgres est plus longue que prévu.&lt;/p&gt;
-
-&lt;p&gt;Bonne exploration.&lt;/p&gt;
-</description>
+      <description>Présentation PacketBeat est un outil qui permet de capturer les flux réseaux (http, mysql, postgres, redis, thrift) et d&amp;rsquo;envoyer le tout sur une base elasticsearch afin de pouvoir analyser l&amp;rsquo;ensemble des requêtes via l&amp;rsquo;interface kibana. Il est également capable d&amp;rsquo;analyser les communications entre 2 processus d&amp;rsquo;un même serveur.
+Ce produit a l&amp;rsquo;avantage d&amp;rsquo;être très facile à déployer, c&amp;rsquo;est écrit en Go donc il a très peu de dépendance. Les paquets rpm et deb de Packetbeat ne fonctionne pas sur certaines vieilles distributions (CentOS5, Debian6), mais je n&amp;rsquo;ai pas essayé de le recompiler sur celles-ci.</description>
     </item>
     
     <item>
@@ -103,12 +38,8 @@ cd packetbeat-dashboards
       <pubDate>Wed, 25 Mar 2015 10:00:00 +0200</pubDate>
       
       <guid>https://gauthierc.github.io/post/slideelk/</guid>
-      <description>&lt;p&gt;Voici mes slides sur ElasticSearch Kibana et Logstash que j&amp;rsquo;ai présenté lors de 2 conférences (une à Lille et l&amp;rsquo;autre à Paris) en mars 2015. ElasticSearch est un super produit, par contre Kibana 4 est très différent de Kibana 3. Je n&amp;rsquo;ai pas encore eu le temps de transférer tout mes dashboards.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://gauthierc.github.io/SlideELK/&#34;&gt;https://gauthierc.github.io/SlideELK/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>Voici mes slides sur ElasticSearch Kibana et Logstash que j&amp;rsquo;ai présenté lors de 2 conférences (une à Lille et l&amp;rsquo;autre à Paris) en mars 2015. ElasticSearch est un super produit, par contre Kibana 4 est très différent de Kibana 3. Je n&amp;rsquo;ai pas encore eu le temps de transférer tout mes dashboards.
+ https://gauthierc.github.io/SlideELK/  </description>
     </item>
     
   </channel>

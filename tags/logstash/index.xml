@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
     <lastBuildDate>Wed, 25 Mar 2015 10:00:00 +0200</lastBuildDate>
-    <atom:link href="https://gauthierc.github.io/tags/logstash/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://gauthierc.github.io/tags/logstash/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Présentation ElasticSearch Logstash Kibana</title>
@@ -15,12 +17,8 @@
       <pubDate>Wed, 25 Mar 2015 10:00:00 +0200</pubDate>
       
       <guid>https://gauthierc.github.io/post/slideelk/</guid>
-      <description>&lt;p&gt;Voici mes slides sur ElasticSearch Kibana et Logstash que j&amp;rsquo;ai présenté lors de 2 conférences (une à Lille et l&amp;rsquo;autre à Paris) en mars 2015. ElasticSearch est un super produit, par contre Kibana 4 est très différent de Kibana 3. Je n&amp;rsquo;ai pas encore eu le temps de transférer tout mes dashboards.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://gauthierc.github.io/SlideELK/&#34;&gt;https://gauthierc.github.io/SlideELK/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>Voici mes slides sur ElasticSearch Kibana et Logstash que j&amp;rsquo;ai présenté lors de 2 conférences (une à Lille et l&amp;rsquo;autre à Paris) en mars 2015. ElasticSearch est un super produit, par contre Kibana 4 est très différent de Kibana 3. Je n&amp;rsquo;ai pas encore eu le temps de transférer tout mes dashboards.
+ https://gauthierc.github.io/SlideELK/  </description>
     </item>
     
   </channel>

@@ -6,8 +6,20 @@
     <description>Recent content on Le Blog de Gauthier</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Sun, 05 Jun 2016 20:10:45 +0200</lastBuildDate>
-    <atom:link href="https://gauthierc.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 27 Oct 2017 20:15:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://gauthierc.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GIT</title>
+      <link>https://gauthierc.github.io/post/git/</link>
+      <pubDate>Fri, 27 Oct 2017 20:15:00 +0200</pubDate>
+      
+      <guid>https://gauthierc.github.io/post/git/</guid>
+      <description>Git est un outil passionnant que tout informaticien/écrivain devrait connaitre et savoir utiliser correctement. Je l&amp;rsquo;utilise quotidiennement depuis plusieurs années et je me suis aperçu en préparant cette formation que je n&amp;rsquo;utilisais pas toutes les possibilités de ce superbe outil.
+De nombreux tutoriels, de vidéos sont disponibles, peu sont en français. Je mets donc en ligne ma petite contribution qui n&amp;rsquo;est qu&amp;rsquo;un petit résumé des excellents documents de référence disponibles sur Git.</description>
+    </item>
     
     <item>
       <title>Présentation Elastic Beats</title>
@@ -15,38 +27,9 @@
       <pubDate>Sun, 05 Jun 2016 20:10:45 +0200</pubDate>
       
       <guid>https://gauthierc.github.io/post/slideelasticbeats/</guid>
-      <description>&lt;p&gt;Voici les slides de ma présentation du jeudi 26 mai à Caen. La présentation est suivie d&amp;rsquo;une démo avec Kibana, ElasticSearch, packetbeat, topbeat et dockerbeat.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://gauthierc.github.io/SlideElasticBeats/&#34;&gt;https://gauthierc.github.io/SlideElasticBeats/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Le docker-compose qui m&amp;rsquo;a permis de lancer la démo:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;elasticsearch-int:
-  image: elasticsearch
-  ports:
-    - 9200:9200
-  volumes:
-    - &amp;quot;/home/gauthier/esdata:/usr/share/elasticsearch/data&amp;quot;
-
-kibana-int:
-  image: kibana
-  ports:
-    - 5601:5601
-  environment:
-    - ELASTICSEARCH_URL=http://elasticsearch-int:9200
-  links:
-    - elasticsearch-int
-
-dockerbeat-int:
-  image: ingensi/dockerbeat
-  links:
-    - elasticsearch-int:elasticsearch
-  volumes:
-    - &amp;quot;/var/run/docker.sock:/var/run/docker.sock&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>Voici les slides de ma présentation du jeudi 26 mai à Caen. La présentation est suivie d&amp;rsquo;une démo avec Kibana, ElasticSearch, packetbeat, topbeat et dockerbeat.
+ https://gauthierc.github.io/SlideElasticBeats/  Le docker-compose qui m&amp;rsquo;a permis de lancer la démo:
+elasticsearch-int: image: elasticsearch ports: - 9200:9200 volumes: - &amp;quot;/home/gauthier/esdata:/usr/share/elasticsearch/data&amp;quot; kibana-int: image: kibana ports: - 5601:5601 environment: - ELASTICSEARCH_URL=http://elasticsearch-int:9200 links: - elasticsearch-int dockerbeat-int: image: ingensi/dockerbeat links: - elasticsearch-int:elasticsearch volumes: - &amp;quot;/var/run/docker.sock:/var/run/docker.sock&amp;quot;  </description>
     </item>
     
     <item>
@@ -55,103 +38,9 @@ dockerbeat-int:
       <pubDate>Sun, 24 Jan 2016 18:39:12 +0100</pubDate>
       
       <guid>https://gauthierc.github.io/post/letsencrypt-haproxy/</guid>
-      <description>
-
-&lt;p&gt;Voici la documentation qui m&amp;rsquo;a permis de mettre en place Let&amp;rsquo;s Encrypt avec Haproxy.&lt;/p&gt;
-
-&lt;p&gt;Sources:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://coolaj86.com/articles/lets-encrypt-with-haproxy/&#34;&gt;https://coolaj86.com/articles/lets-encrypt-with-haproxy/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.infomee.fr/p/letsencrypt-haproxy&#34;&gt;https://blog.infomee.fr/p/letsencrypt-haproxy&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;principe&#34;&gt;Principe&lt;/h1&gt;
-
-&lt;p&gt;Let&amp;rsquo;s Encrypt permet de générer un certificat valide de façon automatique. Ce certificat a une durée de validité de 3 mois. Il faut donc le renouveler très régulièrement.
-Pour fonctionner letsencrypt a besoin d&amp;rsquo;un serveur web, dans notre cas haproxy est juste un proxy, ce n&amp;rsquo;est pas lui qui fournit les pages, mais les serveurs web des backends.
-le script letsencrypt a besoin de créer un fichier pour le challenge dans le répertoire d&amp;rsquo;un serveur web. Le chemin étant facilement identifiable, nous allons créer un acl sur haproxy pour renvoyer les pages letsencrypt sur un serveur apache en particulier.&lt;/p&gt;
-
-&lt;h1 id=&#34;installation-de-let-s-encrypt&#34;&gt;Installation de Let&amp;rsquo;s Encrypt&lt;/h1&gt;
-
-&lt;p&gt;Il n&amp;rsquo;existe pas actuellement de packet debian de Let&amp;rsquo;s Encrypt pour les debian avant Stretch (actuellement en testing). Il est donc nécessaire de procéder à l&amp;rsquo;installation depuis les sources.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git clone https://github.com/letsencrypt/letsencrypt
-cd letsencrypt
-./letsencrypt-auto
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Le script d&amp;rsquo;installation va créer une arborescence /root/.local/share/letsencrypt/ et y installer le logiciel.
-Par soucis de simplicité il faut ensuite aller dans /usr/sbin et créer un lien avec la commande :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ln -s /root/.local/share/letsencrypt/bin/letsencrypt 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;configuration-d-apache&#34;&gt;Configuration d&amp;rsquo;Apache&lt;/h1&gt;
-
-&lt;p&gt;Nous avons besoin d&amp;rsquo;un serveur web pour fournir la page du challenge. Nous allons configurer Apache pour qu&amp;rsquo;il écoute sur 127.0.0.1:1080. Le documentRoot sera /var/www/letsencrypt.request/.&lt;/p&gt;
-
-&lt;p&gt;Fichier /etc/apache/ports.conf:
-    Listen 127.0.0.1:1080&lt;/p&gt;
-
-&lt;p&gt;Fichier /etc/apache/sites-available/letsencrypt.conf:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;VirtualHost *:1080&amp;gt;
-  ServerName letsencrypt.request
-  DocumentRoot /var/www/letsencrypt.request
-&amp;lt;/VirtualHost&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Activer le nouveau site et désactiver le site par défaut :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;a2ensite letsencrypt
-/etc/init.d/apache2 restart
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;configuration-de-haproxy&#34;&gt;Configuration de Haproxy&lt;/h1&gt;
-
-&lt;p&gt;Prenons le cas où nous n&amp;rsquo;avons qu&amp;rsquo;une seul ip et donc qu&amp;rsquo;un seul frontend haproxy pour le http et un autre pour le https:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;frontend ft_http-in
-    option http-keep-alive
-    compression algo gzip
-    compression type text/html text/plain text/css application/x-javascript
-    option      httplog
-    bind *:80
-    acl letsencrypt_check path_beg /.well-known/acme-challenge
-    # ... les autres acl
-    use_backend letsencrypt_backend if letsencrypt_check
-    # ... les autres use_backend
-
-frontend https-in
-    bind *:443 ssl crt /etc/ssl/letsencrypt
-    tcp-request inspect-delay 5s
-    tcp-request content accept if { req.ssl_hello_type 1 }
-    acl letsencrypt_check path_beg /.well-known/acme-challenge
-    # ... les autres acl
-    use_backend letsencrypt_backend if letsencrypt_check
-    # ... les autres use_backend
-
-backend letsencrypt_backend
-    http-request set-header Host letsencrypt.request
-    server apache 127.0.0.1:1080 check
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;création-du-certificat&#34;&gt;Création du certificat&lt;/h1&gt;
-
-&lt;p&gt;Création d&amp;rsquo;un seul certificat:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;letsencrypt certonly --email adminsys@mondomaine.org --webroot -w /var/www/letsencrypt.request/ -d www.mondomaine.org 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;letsencrypt va créer une arborescence dans /etc/letsencrypt mais pour utiliser ces certificats dans haproxy il faut concaténer les fichiers dans un seul dans le répertoire /etc/ssl/letsencrypt avec le programme suivant:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#!/bin/bash
-for domain in $(ls /etc/letsencrypt/live); do 
-    cat /etc/letsencrypt/live/$domain/privkey.pem /etc/letsencrypt/live/$domain/fullchain.pem &amp;gt; /etc/ssl/letsencrypt/$domain.pem
-done
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>Voici la documentation qui m&amp;rsquo;a permis de mettre en place Let&amp;rsquo;s Encrypt avec Haproxy.
+Sources:
+ https://coolaj86.com/articles/lets-encrypt-with-haproxy/ https://blog.infomee.fr/p/letsencrypt-haproxy  Principe Let&amp;rsquo;s Encrypt permet de générer un certificat valide de façon automatique. Ce certificat a une durée de validité de 3 mois. Il faut donc le renouveler très régulièrement. Pour fonctionner letsencrypt a besoin d&amp;rsquo;un serveur web, dans notre cas haproxy est juste un proxy, ce n&amp;rsquo;est pas lui qui fournit les pages, mais les serveurs web des backends.</description>
     </item>
     
     <item>
@@ -160,12 +49,8 @@ done
       <pubDate>Wed, 20 Jan 2016 18:10:45 +0100</pubDate>
       
       <guid>https://gauthierc.github.io/post/slidemicroservices/</guid>
-      <description>&lt;p&gt;Voici les slides de ma présentation du 19 janvier à Paris. La présentation prend plus d&amp;rsquo;une heure. Le but de cette présentation est d&amp;rsquo;amener les concepts d&amp;rsquo;une architecture Microservices et de proposer des solutions pour la mise en production.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://gauthierc.github.io/SlideDockerMicroservices/&#34;&gt;https://gauthierc.github.io/SlideDockerMicroservices/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>Voici les slides de ma présentation du 19 janvier à Paris. La présentation prend plus d&amp;rsquo;une heure. Le but de cette présentation est d&amp;rsquo;amener les concepts d&amp;rsquo;une architecture Microservices et de proposer des solutions pour la mise en production.
+ https://gauthierc.github.io/SlideDockerMicroservices/  </description>
     </item>
     
     <item>
@@ -174,46 +59,8 @@ done
       <pubDate>Tue, 09 Jun 2015 20:35:27 +0200</pubDate>
       
       <guid>https://gauthierc.github.io/post/packetbeat/</guid>
-      <description>
-
-&lt;h2 id=&#34;présentation&#34;&gt;Présentation&lt;/h2&gt;
-
-&lt;p&gt;PacketBeat est un outil qui permet de capturer les flux réseaux (http, mysql, postgres, redis, thrift) et d&amp;rsquo;envoyer le tout sur une base elasticsearch afin de pouvoir analyser l&amp;rsquo;ensemble des requêtes via l&amp;rsquo;interface kibana. Il est également capable d&amp;rsquo;analyser les communications entre 2 processus d&amp;rsquo;un même serveur.&lt;/p&gt;
-
-&lt;p&gt;Ce produit a l&amp;rsquo;avantage d&amp;rsquo;être très facile à déployer, c&amp;rsquo;est écrit en &lt;a href=&#34;http://golang.org&#34;&gt;Go&lt;/a&gt; donc il a très peu de dépendance. Les paquets rpm et deb de Packetbeat ne fonctionne pas sur certaines vieilles distributions (CentOS5, Debian6), mais je n&amp;rsquo;ai pas essayé de le recompiler sur celles-ci.&lt;/p&gt;
-
-&lt;p&gt;L&amp;rsquo;équipe de Packetbeat a rejoint &lt;a href=&#34;https://www.elastic.co/blog/welcome-packetbeat-tudor-monica&#34;&gt;elastic.co&lt;/a&gt; le 27 mai 2015. Il est maintenant disponible en version 1.0-beta1.&lt;/p&gt;
-
-&lt;p&gt;Cette version me semble nettement moins gourmande en cpu que les versions 0.4x que j&amp;rsquo;avais testée précédemment. Je ne l&amp;rsquo;avais pas encore mis en prod pour cette raison. Cette version est compatible Kibana4 une &lt;a href=&#34;http://demo.elastic.co/packetbeat&#34;&gt;démo&lt;/a&gt; est consultable en ligne.&lt;/p&gt;
-
-&lt;h2 id=&#34;mise-en-place&#34;&gt;Mise en place&lt;/h2&gt;
-
-&lt;p&gt;Dans un premier temps il faut installer elasticsearch (version 1.5 ou superieur) et kibana4.x.
-Ensuite sur chaque serveur que l&amp;rsquo;on veut monitorer il faut &lt;a href=&#34;https://www.elastic.co/downloads/beats/packetbeat&#34;&gt;télécharger packetbeat&lt;/a&gt; et l&amp;rsquo;installer.&lt;/p&gt;
-
-&lt;p&gt;Exemple sur Debian 64bits :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget https://download.elastic.co/beats/packetbeat/packetbeat_1.0.0~Beta1_amd64.deb
-dpkg -i packetbeat_1.0.0~Beta1_amd64.deb
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Enfin il faut éditer le fichier packetbeat.yml pour indiquer l&amp;rsquo;adresse du serveur elasticsearch et les ports par protocole que l&amp;rsquo;on veut monitorer.&lt;/p&gt;
-
-&lt;h2 id=&#34;configuration-des-dashboards&#34;&gt;Configuration des dashboards&lt;/h2&gt;
-
-&lt;p&gt;Le &lt;a href=&#34;https://github.com/elastic/packetbeat-dashboards&#34;&gt;dépôt github&lt;/a&gt; contient toutes les informations pour mettre en place les dashboards kibana4.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git clone https://github.com/elastic/packetbeat-dashboards.git
-cd packetbeat-dashboards
-./load.sh http://localhost:9200
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;Vous n&amp;rsquo;avez plus qu&amp;rsquo;a attendre quelques minutes/heures/jours et découvrir pourquoi certaine application ne sont pas aussi rapide que souhaité. Peut-être qu&amp;rsquo;une requête mysql ou postgres est plus longue que prévu.&lt;/p&gt;
-
-&lt;p&gt;Bonne exploration.&lt;/p&gt;
-</description>
+      <description>Présentation PacketBeat est un outil qui permet de capturer les flux réseaux (http, mysql, postgres, redis, thrift) et d&amp;rsquo;envoyer le tout sur une base elasticsearch afin de pouvoir analyser l&amp;rsquo;ensemble des requêtes via l&amp;rsquo;interface kibana. Il est également capable d&amp;rsquo;analyser les communications entre 2 processus d&amp;rsquo;un même serveur.
+Ce produit a l&amp;rsquo;avantage d&amp;rsquo;être très facile à déployer, c&amp;rsquo;est écrit en Go donc il a très peu de dépendance. Les paquets rpm et deb de Packetbeat ne fonctionne pas sur certaines vieilles distributions (CentOS5, Debian6), mais je n&amp;rsquo;ai pas essayé de le recompiler sur celles-ci.</description>
     </item>
     
     <item>
@@ -222,23 +69,9 @@ cd packetbeat-dashboards
       <pubDate>Mon, 01 Jun 2015 16:57:33 +0200</pubDate>
       
       <guid>https://gauthierc.github.io/post/slidecoreos/</guid>
-      <description>&lt;p&gt;J&amp;rsquo;ai mis en ligne les slides CoreOS que je présenterai à Nantes le 5 juin 2015. Je ne suis pas sûr de tenir dans les 50 minutes qui me sont allouées.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://gauthierc.github.io/SlideCoreOS/&#34;&gt;https://gauthierc.github.io/SlideCoreOS/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;La plateforme CoreOS est pour moi intéressante pour plusieurs points:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Logiciel libre.&lt;/li&gt;
-&lt;li&gt;Facile et rapide à déployer.&lt;/li&gt;
-&lt;li&gt;Innovant sans pour autant demander un investissement trop important des équipes d&amp;rsquo;exploitation.&lt;/li&gt;
-&lt;li&gt;Un support pour ceux qui le désire.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Dans ma présentation, je parle rapidement de la montée de version de CoreOS. Le type d&amp;rsquo;installation que j&amp;rsquo;utilise ne nécessite pas de passer par l&amp;rsquo;outil de mise à jour fournit par le support. Ce dernier gère une double partition d&amp;rsquo;installation afin de basculer sur la version précédente en cas de problème. Ici, rien d&amp;rsquo;aussi compliqué, chaque serveur CoreOS boot en ipxe et va chercher son image. En cas de problème il suffit de spécifier une autre image dans le fichier de configuration et de rebooter le serveur.&lt;/p&gt;
-</description>
+      <description>J&amp;rsquo;ai mis en ligne les slides CoreOS que je présenterai à Nantes le 5 juin 2015. Je ne suis pas sûr de tenir dans les 50 minutes qui me sont allouées.
+ https://gauthierc.github.io/SlideCoreOS/  La plateforme CoreOS est pour moi intéressante pour plusieurs points:
+ Logiciel libre. Facile et rapide à déployer. Innovant sans pour autant demander un investissement trop important des équipes d&amp;rsquo;exploitation. Un support pour ceux qui le désire.</description>
     </item>
     
     <item>
@@ -247,12 +80,8 @@ cd packetbeat-dashboards
       <pubDate>Wed, 25 Mar 2015 10:00:00 +0200</pubDate>
       
       <guid>https://gauthierc.github.io/post/slideelk/</guid>
-      <description>&lt;p&gt;Voici mes slides sur ElasticSearch Kibana et Logstash que j&amp;rsquo;ai présenté lors de 2 conférences (une à Lille et l&amp;rsquo;autre à Paris) en mars 2015. ElasticSearch est un super produit, par contre Kibana 4 est très différent de Kibana 3. Je n&amp;rsquo;ai pas encore eu le temps de transférer tout mes dashboards.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://gauthierc.github.io/SlideELK/&#34;&gt;https://gauthierc.github.io/SlideELK/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>Voici mes slides sur ElasticSearch Kibana et Logstash que j&amp;rsquo;ai présenté lors de 2 conférences (une à Lille et l&amp;rsquo;autre à Paris) en mars 2015. ElasticSearch est un super produit, par contre Kibana 4 est très différent de Kibana 3. Je n&amp;rsquo;ai pas encore eu le temps de transférer tout mes dashboards.
+ https://gauthierc.github.io/SlideELK/  </description>
     </item>
     
     <item>
@@ -261,11 +90,8 @@ cd packetbeat-dashboards
       <pubDate>Thu, 22 Jan 2015 09:30:00 +0100</pubDate>
       
       <guid>https://gauthierc.github.io/post/slidevirtu/</guid>
-      <description>&lt;p&gt;Voici une petite présentation sur les concepts de la virtualisation et sur le cloud en général.
-Cette présentation a été donné à des étudiants, j&amp;rsquo;ai l&amp;rsquo;impression que le personnel de l&amp;rsquo;université et les chercheurs présents dans la salle étaient beaucoup plus intéressé par mon discours.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://gauthierc.github.io/SlideVirtu/&#34;&gt;https://gauthierc.github.io/SlideVirtu/&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>Voici une petite présentation sur les concepts de la virtualisation et sur le cloud en général. Cette présentation a été donné à des étudiants, j&amp;rsquo;ai l&amp;rsquo;impression que le personnel de l&amp;rsquo;université et les chercheurs présents dans la salle étaient beaucoup plus intéressé par mon discours.
+https://gauthierc.github.io/SlideVirtu/</description>
     </item>
     
     <item>
@@ -274,14 +100,10 @@ Cette présentation a été donné à des étudiants, j&amp;rsquo;ai l&amp;rsquo
       <pubDate>Thu, 01 Jan 2015 16:40:53 +0200</pubDate>
       
       <guid>https://gauthierc.github.io/post/welcome/</guid>
-      <description>&lt;p&gt;Bienvenue !&lt;/p&gt;
-
-&lt;p&gt;Sur ce site, vous retrouverez toutes les actualités sur mes différents projets GitHub &lt;a href=&#34;https://github.com/gauthierc&#34;&gt;https://github.com/gauthierc&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Je suis (entre autre) adminsys et j&amp;rsquo;ai malheureusement pas beaucoup le temps de développer des applis. C&amp;rsquo;est dommage car j&amp;rsquo;ai plein d&amp;rsquo;idée. En plus comme je ne programme pas beaucoup, je ne suis pas super efficace et donc cela me prends plus de temps.&lt;/p&gt;
-
-&lt;p&gt;Actuellement je programme en &lt;a href=&#34;https://golang.org&#34;&gt;Go&lt;/a&gt;, &lt;a href=&#34;https://python.org&#34;&gt;Python&lt;/a&gt;, &lt;a href=&#34;https://nodejs.org&#34;&gt;NodeJS&lt;/a&gt; et &lt;a href=&#34;http://www.gnu.org/software/bash/&#34;&gt;Bash&lt;/a&gt; (bien sûr).&lt;/p&gt;
-</description>
+      <description>Bienvenue !
+Sur ce site, vous retrouverez toutes les actualités sur mes différents projets GitHub https://github.com/gauthierc
+Je suis (entre autre) adminsys et j&amp;rsquo;ai malheureusement pas beaucoup le temps de développer des applis. C&amp;rsquo;est dommage car j&amp;rsquo;ai plein d&amp;rsquo;idée. En plus comme je ne programme pas beaucoup, je ne suis pas super efficace et donc cela me prends plus de temps.
+Actuellement je programme en Go, Python, NodeJS et Bash (bien sûr).</description>
     </item>
     
   </channel>
