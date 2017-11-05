@@ -48,6 +48,11 @@
   </url>
   
   <url>
+    <loc>https://gauthierc.github.io/author/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://gauthierc.github.io/categories/blog/</loc>
     <lastmod>2015-01-01T16:40:53+02:00</lastmod>
     <priority>0</priority>
@@ -66,20 +71,14 @@
   </url>
   
   <url>
-    <loc>https://gauthierc.github.io/categories/coreos/</loc>
-    <lastmod>2015-06-01T16:57:33+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://gauthierc.github.io/tags/coreos/</loc>
     <lastmod>2015-06-01T16:57:33+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://gauthierc.github.io/categories/docker/</loc>
-    <lastmod>2016-01-20T18:10:45+01:00</lastmod>
+    <loc>https://gauthierc.github.io/categories/coreos/</loc>
+    <lastmod>2015-06-01T16:57:33+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -90,13 +89,19 @@
   </url>
   
   <url>
-    <loc>https://gauthierc.github.io/categories/elasticsearch/</loc>
-    <lastmod>2016-06-05T20:10:45+02:00</lastmod>
+    <loc>https://gauthierc.github.io/categories/docker/</loc>
+    <lastmod>2016-01-20T18:10:45+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://gauthierc.github.io/tags/elasticsearch/</loc>
+    <lastmod>2016-06-05T20:10:45+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gauthierc.github.io/categories/elasticsearch/</loc>
     <lastmod>2016-06-05T20:10:45+02:00</lastmod>
     <priority>0</priority>
   </url>
@@ -114,25 +119,25 @@
   </url>
   
   <url>
-    <loc>https://gauthierc.github.io/categories/git/</loc>
-    <lastmod>2017-10-27T20:15:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://gauthierc.github.io/tags/git/</loc>
     <lastmod>2017-10-27T20:15:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://gauthierc.github.io/categories/haproxy/</loc>
-    <lastmod>2016-01-24T18:39:12+01:00</lastmod>
+    <loc>https://gauthierc.github.io/categories/git/</loc>
+    <lastmod>2017-10-27T20:15:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://gauthierc.github.io/tags/haproxy/</loc>
+    <lastmod>2016-01-24T18:39:12+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gauthierc.github.io/categories/haproxy/</loc>
     <lastmod>2016-01-24T18:39:12+01:00</lastmod>
     <priority>0</priority>
   </url>
@@ -162,13 +167,13 @@
   </url>
   
   <url>
-    <loc>https://gauthierc.github.io/categories/microservices/</loc>
+    <loc>https://gauthierc.github.io/tags/microservices/</loc>
     <lastmod>2016-01-20T18:10:45+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://gauthierc.github.io/tags/microservices/</loc>
+    <loc>https://gauthierc.github.io/categories/microservices/</loc>
     <lastmod>2016-01-20T18:10:45+01:00</lastmod>
     <priority>0</priority>
   </url>

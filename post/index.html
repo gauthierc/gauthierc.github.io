@@ -1,848 +1,601 @@
-<!DOCTYPE html>
+<!doctype html>
+<html class="no-js" lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<html lang="fr-fr">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width">
-	<title>Le Blog de Gauthier</title>
-	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<!--[if lt IE 9]>
-	<script src="https://gauthierc.github.io//js/html5.js"></script>
-	<![endif]-->
+        <meta name="author" content="Gauthier C.">
+        <meta name="description" content="Le blog de Gauthier">
+        <meta name="keywords" content="blog,personal,DevOps,elasticsearch,golang, docker">
+        <meta name="generator" content="Hugo 0.31-DEV" />
+
+        <link rel="stylesheet" href="/dist/theme.css">
+
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.2.1/dist/instantsearch.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.2.1/dist/instantsearch-theme-algolia.min.css">
+
+
+        
+        <title>Le Blog de Gauthier  | Posts</title>
+    </head>
+    <body class="bilberry-hugo-theme">
+        <nav>
+    <div class="container">
+        <ul class="topnav">
+            
+        </ul>
+
+        
+    </div>
+</nav>
+
+
+        <header>
+    <div class="container">
+        <div class="logo">
+            <a href="https://gauthierc.github.io/" class="logo">
+                
+                    <img src="https://avatars1.githubusercontent.com/u/3176890?s=460&amp;v=4" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title"><a href="https://gauthierc.github.io/">Le Blog de Gauthier</a></h3>
+            
+        </div>
+
+        <div class="toggler">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
+    </div>
+</header>
+
+
+        <div class="main container">
+            
     
-    <link href="https://gauthierc.github.io//index.xml" rel="alternate" type="application/rss+xml" title="Le Blog de Gauthier" />
-
-    <link rel='stylesheet' id='twentyfourteen-lato-css'  href='//fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
-
-    <link rel='stylesheet' id='genericons-css' href='https://gauthierc.github.io//genericons/genericons.css' type='text/css' media='all' />
-	<link rel='stylesheet' id='twentyfourteen-style-css' href='https://gauthierc.github.io//css/style.css' type='text/css' media='all' />
-	
-	<script type='text/javascript' src='https://gauthierc.github.io//js/jquery/jquery.js'></script>
-	<script type='text/javascript' src='https://gauthierc.github.io//js/jquery/jquery-migrate.min.js'></script>
-	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
-</head>
-
-<body class="home blog masthead-fixed list-view full-width grid">
-<div id="page" class="hfeed site">
-	<header id="masthead" class="site-header" role="banner">
-		<div class="header-main">
-			<h1 class="site-title"><a href="https://gauthierc.github.io//index.html" rel="home">Le Blog de Gauthier</a></h1>
-
-			<div class="search-toggle">
-				<a href="#search-container" class="screen-reader-text">Search</a>
-			</div>
-
-			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
-				<button class="menu-toggle">Primary Menu</button>
-				<a class="screen-reader-text skip-link" href="#content">Skip to content</a>
-				<div class="nav-menu">
-					<ul>
-						
-					</ul>
-				</div>
-			</nav>
-		</div>
-
-		<div id="search-container" class="search-box-wrapper hide">
-			<div class="search-box">
-                <script type="text/javascript">
-    function site_search(obj) {
-    	var host = window.location.host;
-        obj.q.value = "site:" + host + " " + obj.ss_q.value;
-    }
-</script>
-
-<aside id="search-3" class="widget widget_search">
-	<form role="search" class="search-form" action="//www.google.com/search" method="get" onSubmit="site_search(this)">
-
-	<input name="q" type="hidden" />
-	    <label>
-	        <span class="screen-reader-text">Search for:</span>
-	        <input name="ss_q" type="text" placeholder="Search ..." class="search-field" />
-	    </label>
-	    <input type="submit" value="Search" class="search-submit" />
-	</form>
-</aside>
-			</div>
-		</div>
-	</header>
-
-	<div id="main" class="site-main">
-
-
-<div id="main-content" class="main-content">
-
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
-
-			<header class="archive-header">
-				<h1 class="archive-title">Posts Archive</h1>
-			</header>
-
-			
-				<article class="post type-post status-publish format-standard hentry">
-
-	
-	<header class="entry-header">
-
-	
-
-		<div class="entry-meta">
-			<span class="cat-links">
-                
-                <a href="https://gauthierc.github.io//categories/slide/index.html" rel="category">Slide</a>
-                
-                <a href="https://gauthierc.github.io//categories/git/index.html" rel="category">Git</a>
-                
-			</span>
-		</div>
-
-		<h1 class="entry-title">GIT</h1>
-
-		<div class="entry-meta">
-			<span class="entry-date">
-				<a href="https://gauthierc.github.io/post/git//index.html" rel="bookmark">
-					<time class="entry-date" datetime="2017-10-27 20:15:00 &#43;0200 CEST">
-						October 27
-					</time>
-				</a>
-			</span>
-		</div>
-
-	</header>
-	
-	<div class="entry-content">
-		<p>Git est un outil passionnant que tout informaticien/écrivain devrait connaitre et savoir utiliser correctement.
-Je l&rsquo;utilise quotidiennement depuis plusieurs années et je me suis aperçu en préparant cette formation que je n&rsquo;utilisais pas toutes les possibilités de ce superbe outil.</p>
-
-<p>De nombreux tutoriels, de vidéos sont disponibles, peu sont en français.
-Je mets donc en ligne ma petite contribution qui n&rsquo;est qu&rsquo;un petit résumé des excellents documents de référence disponibles sur Git.</p>
-
-<ul>
-<li><a href="https://gauthierc.github.io/SlideGit/">https://gauthierc.github.io/SlideGit/</a></li>
-</ul>
-
-<p>Plusieurs points importants n&rsquo;ont pas été abordés: les submodules, les hooks&hellip;
-Mais il fallait faire quelques petits compromis pour que cela tienne en 15h, avec de
-nombreux travaux pratiques.</p>
-
-<p>J&rsquo;essayerai d&rsquo;y apporter des améliorations dans les prochains mois, mais si vous le souhaitez vous pouvez
-également participer.</p>
-
-	</div>
-
-	<footer class="entry-meta">
-		<span class="tag-links">		
-			
-                <a href="https://gauthierc.github.io//tags/git/index.html" rel="tag">Git</a>
+    
+        <div class="article-wrapper u-cf">
             
-		</span>
-	</footer>
-</article> 
-			
-				<article class="post type-post status-publish format-standard hentry">
+                <a class="bubble" href="/post/git/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
 
-	
-	<header class="entry-header">
+<article class="default article">
+    
 
-	
+    <div class="content">
+    <h3><a href="/post/git/">GIT</a></h3>
+    <div class="meta">
+        <span class="date moment">2017-10-27</span>
 
-		<div class="entry-meta">
-			<span class="cat-links">
+        
+            <span class="categories">
                 
-                <a href="https://gauthierc.github.io//categories/slide/index.html" rel="category">Slide</a>
+                    <a href="/categories/slide">Slide</a>
                 
-                <a href="https://gauthierc.github.io//categories/elasticsearch/index.html" rel="category">ElasticSearch</a>
+                    <a href="/categories/git">Git</a>
                 
-			</span>
-		</div>
-
-		<h1 class="entry-title">Présentation Elastic Beats</h1>
-
-		<div class="entry-meta">
-			<span class="entry-date">
-				<a href="https://gauthierc.github.io/post/slideelasticbeats//index.html" rel="bookmark">
-					<time class="entry-date" datetime="2016-06-05 20:10:45 &#43;0200 CEST">
-						June 5
-					</time>
-				</a>
-			</span>
-		</div>
-
-	</header>
-	
-	<div class="entry-content">
-		<p>Voici les slides de ma présentation du jeudi 26 mai à Caen. La présentation est suivie d&rsquo;une démo avec Kibana, ElasticSearch, packetbeat, topbeat et dockerbeat.</p>
-
-<ul>
-<li><a href="https://gauthierc.github.io/SlideElasticBeats/">https://gauthierc.github.io/SlideElasticBeats/</a></li>
-</ul>
-
-<p>Le docker-compose qui m&rsquo;a permis de lancer la démo:</p>
-
-<pre><code>elasticsearch-int:
-  image: elasticsearch
-  ports:
-    - 9200:9200
-  volumes:
-    - &quot;/home/gauthier/esdata:/usr/share/elasticsearch/data&quot;
-
-kibana-int:
-  image: kibana
-  ports:
-    - 5601:5601
-  environment:
-    - ELASTICSEARCH_URL=http://elasticsearch-int:9200
-  links:
-    - elasticsearch-int
-
-dockerbeat-int:
-  image: ingensi/dockerbeat
-  links:
-    - elasticsearch-int:elasticsearch
-  volumes:
-    - &quot;/var/run/docker.sock:/var/run/docker.sock&quot;
-</code></pre>
-
-	</div>
-
-	<footer class="entry-meta">
-		<span class="tag-links">		
-			
-                <a href="https://gauthierc.github.io//tags/elasticsearch/index.html" rel="tag">ElasticSearch</a>
-            
-                <a href="https://gauthierc.github.io//tags/packetbeat/index.html" rel="tag">Packetbeat</a>
-            
-		</span>
-	</footer>
-</article> 
-			
-				<article class="post type-post status-publish format-standard hentry">
-
-	
-	<header class="entry-header">
-
-	
-
-		<div class="entry-meta">
-			<span class="cat-links">
-                
-                <a href="https://gauthierc.github.io//categories/haproxy/index.html" rel="category">Haproxy</a>
-                
-			</span>
-		</div>
-
-		<h1 class="entry-title">Let&#39;s Encrypt avec Haproxy</h1>
-
-		<div class="entry-meta">
-			<span class="entry-date">
-				<a href="https://gauthierc.github.io/post/letsencrypt-haproxy//index.html" rel="bookmark">
-					<time class="entry-date" datetime="2016-01-24 18:39:12 &#43;0100 CET">
-						January 24
-					</time>
-				</a>
-			</span>
-		</div>
-
-	</header>
-	
-	<div class="entry-content">
-		
-
-<p>Voici la documentation qui m&rsquo;a permis de mettre en place Let&rsquo;s Encrypt avec Haproxy.</p>
-
-<p>Sources:</p>
-
-<ul>
-<li><a href="https://coolaj86.com/articles/lets-encrypt-with-haproxy/">https://coolaj86.com/articles/lets-encrypt-with-haproxy/</a></li>
-<li><a href="https://blog.infomee.fr/p/letsencrypt-haproxy">https://blog.infomee.fr/p/letsencrypt-haproxy</a></li>
-</ul>
-
-<h1 id="principe">Principe</h1>
-
-<p>Let&rsquo;s Encrypt permet de générer un certificat valide de façon automatique. Ce certificat a une durée de validité de 3 mois. Il faut donc le renouveler très régulièrement.
-Pour fonctionner letsencrypt a besoin d&rsquo;un serveur web, dans notre cas haproxy est juste un proxy, ce n&rsquo;est pas lui qui fournit les pages, mais les serveurs web des backends.
-le script letsencrypt a besoin de créer un fichier pour le challenge dans le répertoire d&rsquo;un serveur web. Le chemin étant facilement identifiable, nous allons créer un acl sur haproxy pour renvoyer les pages letsencrypt sur un serveur apache en particulier.</p>
-
-<h1 id="installation-de-let-s-encrypt">Installation de Let&rsquo;s Encrypt</h1>
-
-<p>Il n&rsquo;existe pas actuellement de packet debian de Let&rsquo;s Encrypt pour les debian avant Stretch (actuellement en testing). Il est donc nécessaire de procéder à l&rsquo;installation depuis les sources.</p>
-
-<pre><code>git clone https://github.com/letsencrypt/letsencrypt
-cd letsencrypt
-./letsencrypt-auto
-</code></pre>
-
-<p>Le script d&rsquo;installation va créer une arborescence /root/.local/share/letsencrypt/ et y installer le logiciel.
-Par soucis de simplicité il faut ensuite aller dans /usr/sbin et créer un lien avec la commande :</p>
-
-<pre><code>ln -s /root/.local/share/letsencrypt/bin/letsencrypt 
-</code></pre>
-
-<h1 id="configuration-d-apache">Configuration d&rsquo;Apache</h1>
-
-<p>Nous avons besoin d&rsquo;un serveur web pour fournir la page du challenge. Nous allons configurer Apache pour qu&rsquo;il écoute sur 127.0.0.1:1080. Le documentRoot sera /var/www/letsencrypt.request/.</p>
-
-<p>Fichier /etc/apache/ports.conf:
-    Listen 127.0.0.1:1080</p>
-
-<p>Fichier /etc/apache/sites-available/letsencrypt.conf:</p>
-
-<pre><code>&lt;VirtualHost *:1080&gt;
-  ServerName letsencrypt.request
-  DocumentRoot /var/www/letsencrypt.request
-&lt;/VirtualHost&gt;
-</code></pre>
-
-<p>Activer le nouveau site et désactiver le site par défaut :</p>
-
-<pre><code>a2ensite letsencrypt
-/etc/init.d/apache2 restart
-</code></pre>
-
-<h1 id="configuration-de-haproxy">Configuration de Haproxy</h1>
-
-<p>Prenons le cas où nous n&rsquo;avons qu&rsquo;une seul ip et donc qu&rsquo;un seul frontend haproxy pour le http et un autre pour le https:</p>
-
-<pre><code>frontend ft_http-in
-    option http-keep-alive
-    compression algo gzip
-    compression type text/html text/plain text/css application/x-javascript
-    option      httplog
-    bind *:80
-    acl letsencrypt_check path_beg /.well-known/acme-challenge
-    # ... les autres acl
-    use_backend letsencrypt_backend if letsencrypt_check
-    # ... les autres use_backend
-
-frontend https-in
-    bind *:443 ssl crt /etc/ssl/letsencrypt
-    tcp-request inspect-delay 5s
-    tcp-request content accept if { req.ssl_hello_type 1 }
-    acl letsencrypt_check path_beg /.well-known/acme-challenge
-    # ... les autres acl
-    use_backend letsencrypt_backend if letsencrypt_check
-    # ... les autres use_backend
-
-backend letsencrypt_backend
-    http-request set-header Host letsencrypt.request
-    server apache 127.0.0.1:1080 check
-</code></pre>
-
-<h1 id="création-du-certificat">Création du certificat</h1>
-
-<p>Création d&rsquo;un seul certificat:</p>
-
-<pre><code>letsencrypt certonly --email adminsys@mondomaine.org --webroot -w /var/www/letsencrypt.request/ -d www.mondomaine.org 
-</code></pre>
-
-<p>letsencrypt va créer une arborescence dans /etc/letsencrypt mais pour utiliser ces certificats dans haproxy il faut concaténer les fichiers dans un seul dans le répertoire /etc/ssl/letsencrypt avec le programme suivant:</p>
-
-<pre><code>#!/bin/bash
-for domain in $(ls /etc/letsencrypt/live); do 
-    cat /etc/letsencrypt/live/$domain/privkey.pem /etc/letsencrypt/live/$domain/fullchain.pem &gt; /etc/ssl/letsencrypt/$domain.pem
-done
-</code></pre>
-
-	</div>
-
-	<footer class="entry-meta">
-		<span class="tag-links">		
-			
-                <a href="https://gauthierc.github.io//tags/haproxy/index.html" rel="tag">haproxy</a>
-            
-                <a href="https://gauthierc.github.io//tags/letsencrypt/index.html" rel="tag">letsencrypt</a>
-            
-		</span>
-	</footer>
-</article> 
-			
-				<article class="post type-post status-publish format-standard hentry">
-
-	
-	<header class="entry-header">
-
-	
-
-		<div class="entry-meta">
-			<span class="cat-links">
-                
-                <a href="https://gauthierc.github.io//categories/slide/index.html" rel="category">Slide</a>
-                
-                <a href="https://gauthierc.github.io//categories/microservices/index.html" rel="category">Microservices</a>
-                
-                <a href="https://gauthierc.github.io//categories/docker/index.html" rel="category">Docker</a>
-                
-			</span>
-		</div>
-
-		<h1 class="entry-title">Présentation Docker Microservices</h1>
-
-		<div class="entry-meta">
-			<span class="entry-date">
-				<a href="https://gauthierc.github.io/post/slidemicroservices//index.html" rel="bookmark">
-					<time class="entry-date" datetime="2016-01-20 18:10:45 &#43;0100 CET">
-						January 20
-					</time>
-				</a>
-			</span>
-		</div>
-
-	</header>
-	
-	<div class="entry-content">
-		<p>Voici les slides de ma présentation du 19 janvier à Paris. La présentation prend plus d&rsquo;une heure. Le but de cette présentation est d&rsquo;amener les concepts d&rsquo;une architecture Microservices et de proposer des solutions pour la mise en production.</p>
-
-<ul>
-<li><a href="https://gauthierc.github.io/SlideDockerMicroservices/">https://gauthierc.github.io/SlideDockerMicroservices/</a></li>
-</ul>
-
-	</div>
-
-	<footer class="entry-meta">
-		<span class="tag-links">		
-			
-                <a href="https://gauthierc.github.io//tags/microservices/index.html" rel="tag">Microservices</a>
-            
-                <a href="https://gauthierc.github.io//tags/docker/index.html" rel="tag">Docker</a>
-            
-                <a href="https://gauthierc.github.io//tags/cloud/index.html" rel="tag">Cloud</a>
-            
-		</span>
-	</footer>
-</article> 
-			
-				<article class="post type-post status-publish format-standard hentry">
-
-	
-	<header class="entry-header">
-
-	
-
-		<div class="entry-meta">
-			<span class="cat-links">
-                
-                <a href="https://gauthierc.github.io//categories/elasticsearch/index.html" rel="category">ElasticSearch</a>
-                
-			</span>
-		</div>
-
-		<h1 class="entry-title">Packetbeat 1.0Beta1</h1>
-
-		<div class="entry-meta">
-			<span class="entry-date">
-				<a href="https://gauthierc.github.io/post/packetbeat//index.html" rel="bookmark">
-					<time class="entry-date" datetime="2015-06-09 20:35:27 &#43;0200 CEST">
-						June 9
-					</time>
-				</a>
-			</span>
-		</div>
-
-	</header>
-	
-	<div class="entry-content">
-		
-
-<h2 id="présentation">Présentation</h2>
-
-<p>PacketBeat est un outil qui permet de capturer les flux réseaux (http, mysql, postgres, redis, thrift) et d&rsquo;envoyer le tout sur une base elasticsearch afin de pouvoir analyser l&rsquo;ensemble des requêtes via l&rsquo;interface kibana. Il est également capable d&rsquo;analyser les communications entre 2 processus d&rsquo;un même serveur.</p>
-
-<p>Ce produit a l&rsquo;avantage d&rsquo;être très facile à déployer, c&rsquo;est écrit en <a href="http://golang.org">Go</a> donc il a très peu de dépendance. Les paquets rpm et deb de Packetbeat ne fonctionne pas sur certaines vieilles distributions (CentOS5, Debian6), mais je n&rsquo;ai pas essayé de le recompiler sur celles-ci.</p>
-
-<p>L&rsquo;équipe de Packetbeat a rejoint <a href="https://www.elastic.co/blog/welcome-packetbeat-tudor-monica">elastic.co</a> le 27 mai 2015. Il est maintenant disponible en version 1.0-beta1.</p>
-
-<p>Cette version me semble nettement moins gourmande en cpu que les versions 0.4x que j&rsquo;avais testée précédemment. Je ne l&rsquo;avais pas encore mis en prod pour cette raison. Cette version est compatible Kibana4 une <a href="http://demo.elastic.co/packetbeat">démo</a> est consultable en ligne.</p>
-
-<h2 id="mise-en-place">Mise en place</h2>
-
-<p>Dans un premier temps il faut installer elasticsearch (version 1.5 ou superieur) et kibana4.x.
-Ensuite sur chaque serveur que l&rsquo;on veut monitorer il faut <a href="https://www.elastic.co/downloads/beats/packetbeat">télécharger packetbeat</a> et l&rsquo;installer.</p>
-
-<p>Exemple sur Debian 64bits :</p>
-
-<pre><code class="language-bash">wget https://download.elastic.co/beats/packetbeat/packetbeat_1.0.0~Beta1_amd64.deb
-dpkg -i packetbeat_1.0.0~Beta1_amd64.deb
-</code></pre>
-
-<p>Enfin il faut éditer le fichier packetbeat.yml pour indiquer l&rsquo;adresse du serveur elasticsearch et les ports par protocole que l&rsquo;on veut monitorer.</p>
-
-<h2 id="configuration-des-dashboards">Configuration des dashboards</h2>
-
-<p>Le <a href="https://github.com/elastic/packetbeat-dashboards">dépôt github</a> contient toutes les informations pour mettre en place les dashboards kibana4.</p>
-
-<pre><code class="language-bash">git clone https://github.com/elastic/packetbeat-dashboards.git
-cd packetbeat-dashboards
-./load.sh http://localhost:9200
-</code></pre>
-
-<h2 id="conclusion">Conclusion</h2>
-
-<p>Vous n&rsquo;avez plus qu&rsquo;a attendre quelques minutes/heures/jours et découvrir pourquoi certaine application ne sont pas aussi rapide que souhaité. Peut-être qu&rsquo;une requête mysql ou postgres est plus longue que prévu.</p>
-
-<p>Bonne exploration.</p>
-
-	</div>
-
-	<footer class="entry-meta">
-		<span class="tag-links">		
-			
-                <a href="https://gauthierc.github.io//tags/elasticsearch/index.html" rel="tag">ElasticSearch</a>
-            
-                <a href="https://gauthierc.github.io//tags/kibana/index.html" rel="tag">kibana</a>
-            
-                <a href="https://gauthierc.github.io//tags/packetbeat/index.html" rel="tag">packetbeat</a>
-            
-		</span>
-	</footer>
-</article> 
-			
-				<article class="post type-post status-publish format-standard hentry">
-
-	
-	<header class="entry-header">
-
-	
-
-		<div class="entry-meta">
-			<span class="cat-links">
-                
-                <a href="https://gauthierc.github.io//categories/slide/index.html" rel="category">Slide</a>
-                
-                <a href="https://gauthierc.github.io//categories/coreos/index.html" rel="category">CoreOS</a>
-                
-			</span>
-		</div>
-
-		<h1 class="entry-title">Présentation CoreOS</h1>
-
-		<div class="entry-meta">
-			<span class="entry-date">
-				<a href="https://gauthierc.github.io/post/slidecoreos//index.html" rel="bookmark">
-					<time class="entry-date" datetime="2015-06-01 16:57:33 &#43;0200 CEST">
-						June 1
-					</time>
-				</a>
-			</span>
-		</div>
-
-	</header>
-	
-	<div class="entry-content">
-		<p>J&rsquo;ai mis en ligne les slides CoreOS que je présenterai à Nantes le 5 juin 2015. Je ne suis pas sûr de tenir dans les 50 minutes qui me sont allouées.</p>
-
-<ul>
-<li><a href="https://gauthierc.github.io/SlideCoreOS/">https://gauthierc.github.io/SlideCoreOS/</a></li>
-</ul>
-
-<p>La plateforme CoreOS est pour moi intéressante pour plusieurs points:</p>
-
-<ul>
-<li>Logiciel libre.</li>
-<li>Facile et rapide à déployer.</li>
-<li>Innovant sans pour autant demander un investissement trop important des équipes d&rsquo;exploitation.</li>
-<li>Un support pour ceux qui le désire.</li>
-</ul>
-
-<p>Dans ma présentation, je parle rapidement de la montée de version de CoreOS. Le type d&rsquo;installation que j&rsquo;utilise ne nécessite pas de passer par l&rsquo;outil de mise à jour fournit par le support. Ce dernier gère une double partition d&rsquo;installation afin de basculer sur la version précédente en cas de problème. Ici, rien d&rsquo;aussi compliqué, chaque serveur CoreOS boot en ipxe et va chercher son image. En cas de problème il suffit de spécifier une autre image dans le fichier de configuration et de rebooter le serveur.</p>
-
-	</div>
-
-	<footer class="entry-meta">
-		<span class="tag-links">		
-			
-                <a href="https://gauthierc.github.io//tags/coreos/index.html" rel="tag">CoreOS</a>
-            
-                <a href="https://gauthierc.github.io//tags/etcd/index.html" rel="tag">etcd</a>
-            
-                <a href="https://gauthierc.github.io//tags/fleet/index.html" rel="tag">fleet</a>
-            
-		</span>
-	</footer>
-</article> 
-			
-				<article class="post type-post status-publish format-standard hentry">
-
-	
-	<header class="entry-header">
-
-	
-
-		<div class="entry-meta">
-			<span class="cat-links">
-                
-                <a href="https://gauthierc.github.io//categories/slide/index.html" rel="category">Slide</a>
-                
-                <a href="https://gauthierc.github.io//categories/elasticsearch/index.html" rel="category">ElasticSearch</a>
-                
-			</span>
-		</div>
-
-		<h1 class="entry-title">Présentation ElasticSearch Logstash Kibana</h1>
-
-		<div class="entry-meta">
-			<span class="entry-date">
-				<a href="https://gauthierc.github.io/post/slideelk//index.html" rel="bookmark">
-					<time class="entry-date" datetime="2015-03-25 10:00:00 &#43;0200 &#43;0200">
-						March 25
-					</time>
-				</a>
-			</span>
-		</div>
-
-	</header>
-	
-	<div class="entry-content">
-		<p>Voici mes slides sur ElasticSearch Kibana et Logstash que j&rsquo;ai présenté lors de 2 conférences (une à Lille et l&rsquo;autre à Paris) en mars 2015. ElasticSearch est un super produit, par contre Kibana 4 est très différent de Kibana 3. Je n&rsquo;ai pas encore eu le temps de transférer tout mes dashboards.</p>
-
-<ul>
-<li><a href="https://gauthierc.github.io/SlideELK/">https://gauthierc.github.io/SlideELK/</a></li>
-</ul>
-
-	</div>
-
-	<footer class="entry-meta">
-		<span class="tag-links">		
-			
-                <a href="https://gauthierc.github.io//tags/elasticsearch/index.html" rel="tag">ElasticSearch</a>
-            
-                <a href="https://gauthierc.github.io//tags/kibana/index.html" rel="tag">kibana</a>
-            
-                <a href="https://gauthierc.github.io//tags/logstash/index.html" rel="tag">logstash</a>
-            
-		</span>
-	</footer>
-</article> 
-			
-				<article class="post type-post status-publish format-standard hentry">
-
-	
-	<header class="entry-header">
-
-	
-
-		<div class="entry-meta">
-			<span class="cat-links">
-                
-                <a href="https://gauthierc.github.io//categories/slide/index.html" rel="category">Slide</a>
-                
-			</span>
-		</div>
-
-		<h1 class="entry-title">Présentation Virtualisation CLoud</h1>
-
-		<div class="entry-meta">
-			<span class="entry-date">
-				<a href="https://gauthierc.github.io/post/slidevirtu//index.html" rel="bookmark">
-					<time class="entry-date" datetime="2015-01-22 09:30:00 &#43;0100 CET">
-						January 22
-					</time>
-				</a>
-			</span>
-		</div>
-
-	</header>
-	
-	<div class="entry-content">
-		<p>Voici une petite présentation sur les concepts de la virtualisation et sur le cloud en général.
-Cette présentation a été donné à des étudiants, j&rsquo;ai l&rsquo;impression que le personnel de l&rsquo;université et les chercheurs présents dans la salle étaient beaucoup plus intéressé par mon discours.</p>
-
-<p><a href="https://gauthierc.github.io/SlideVirtu/">https://gauthierc.github.io/SlideVirtu/</a></p>
-
-	</div>
-
-	<footer class="entry-meta">
-		<span class="tag-links">		
-			
-                <a href="https://gauthierc.github.io//tags/virtualisation/index.html" rel="tag">Virtualisation</a>
-            
-                <a href="https://gauthierc.github.io//tags/cloud/index.html" rel="tag">Cloud</a>
-            
-		</span>
-	</footer>
-</article> 
-			
-				<article class="post type-post status-publish format-standard hentry">
-
-	
-	<header class="entry-header">
-
-	
-
-		<div class="entry-meta">
-			<span class="cat-links">
-                
-                <a href="https://gauthierc.github.io//categories/blog/index.html" rel="category">Blog</a>
-                
-			</span>
-		</div>
-
-		<h1 class="entry-title">Bienvenue</h1>
-
-		<div class="entry-meta">
-			<span class="entry-date">
-				<a href="https://gauthierc.github.io/post/welcome//index.html" rel="bookmark">
-					<time class="entry-date" datetime="2015-01-01 16:40:53 &#43;0200 &#43;0200">
-						January 1
-					</time>
-				</a>
-			</span>
-		</div>
-
-	</header>
-	
-	<div class="entry-content">
-		<p>Bienvenue !</p>
-
-<p>Sur ce site, vous retrouverez toutes les actualités sur mes différents projets GitHub <a href="https://github.com/gauthierc">https://github.com/gauthierc</a></p>
-
-<p>Je suis (entre autre) adminsys et j&rsquo;ai malheureusement pas beaucoup le temps de développer des applis. C&rsquo;est dommage car j&rsquo;ai plein d&rsquo;idée. En plus comme je ne programme pas beaucoup, je ne suis pas super efficace et donc cela me prends plus de temps.</p>
-
-<p>Actuellement je programme en <a href="https://golang.org">Go</a>, <a href="https://python.org">Python</a>, <a href="https://nodejs.org">NodeJS</a> et <a href="http://www.gnu.org/software/bash/">Bash</a> (bien sûr).</p>
-
-	</div>
-
-	<footer class="entry-meta">
-		<span class="tag-links">		
-			
-		</span>
-	</footer>
-</article> 
-			
-		
-		</div>
-	</div>
-	<div id="secondary">
-
-	
-
-	<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
-
-		<script type="text/javascript">
-    function site_search(obj) {
-    	var host = window.location.host;
-        obj.q.value = "site:" + host + " " + obj.ss_q.value;
-    }
-</script>
-
-<aside id="search-3" class="widget widget_search">
-	<form role="search" class="search-form" action="//www.google.com/search" method="get" onSubmit="site_search(this)">
-
-	<input name="q" type="hidden" />
-	    <label>
-	        <span class="screen-reader-text">Search for:</span>
-	        <input name="ss_q" type="text" placeholder="Search ..." class="search-field" />
-	    </label>
-	    <input type="submit" value="Search" class="search-submit" />
-	</form>
-</aside>
-
-		<aside id="recent-posts-3" class="widget widget_recent_entries">
-
-	
-	<h1 class="widget-title">Recent Posts</h1>
-		<ul>
-			
-			<li>
-				<a href="https://gauthierc.github.io/post/git//index.html">GIT</a>
-			</li>
-			
-			<li>
-				<a href="https://gauthierc.github.io/post/slideelasticbeats//index.html">Présentation Elastic Beats</a>
-			</li>
-			
-			<li>
-				<a href="https://gauthierc.github.io/post/letsencrypt-haproxy//index.html">Let&#39;s Encrypt avec Haproxy</a>
-			</li>
-			
-			<li>
-				<a href="https://gauthierc.github.io/post/slidemicroservices//index.html">Présentation Docker Microservices</a>
-			</li>
-			
-			<li>
-				<a href="https://gauthierc.github.io/post/packetbeat//index.html">Packetbeat 1.0Beta1</a>
-			</li>
-			
-		</ul>
-	
-</aside>
-
-		<aside id="categories-3" class="widget widget_categories">
-	
-	<h1 class="widget-title">Categories</h1>
-
-	<ul>
-		
-		
-		
-		<li class="cat-item">
-			<a href="https://gauthierc.github.io//categories/blog/index.html">Blog</a>
-		</li>
-
-		
-		
-		<li class="cat-item">
-			<a href="https://gauthierc.github.io//categories/coreos/index.html">Coreos</a>
-		</li>
-
-		
-		
-		<li class="cat-item">
-			<a href="https://gauthierc.github.io//categories/docker/index.html">Docker</a>
-		</li>
-
-		
-		
-		<li class="cat-item">
-			<a href="https://gauthierc.github.io//categories/elasticsearch/index.html">Elasticsearch</a>
-		</li>
-
-		
-		
-		<li class="cat-item">
-			<a href="https://gauthierc.github.io//categories/git/index.html">Git</a>
-		</li>
-
-		
-		
-		<li class="cat-item">
-			<a href="https://gauthierc.github.io//categories/haproxy/index.html">Haproxy</a>
-		</li>
-
-		
-		
-		<li class="cat-item">
-			<a href="https://gauthierc.github.io//categories/microservices/index.html">Microservices</a>
-		</li>
-
-		
-		
-		<li class="cat-item">
-			<a href="https://gauthierc.github.io//categories/slide/index.html">Slide</a>
-		</li>
-
-		
-
-	</ul>
-
-</aside>
-
-	</div>
-
+            </span>
+        
+
+        
+    </div>
+
+    
+        Git est un outil passionnant que tout informaticien/écrivain devrait connaitre et savoir utiliser correctement. Je l&rsquo;utilise quotidiennement depuis plusieurs années et je me suis aperçu en préparant cette formation que je n&rsquo;utilisais pas toutes les possibilités de ce superbe outil.
+De nombreux tutoriels, de vidéos sont disponibles, peu sont en français. Je mets donc en ligne ma petite contribution qui n&rsquo;est qu&rsquo;un petit résumé des excellents documents de référence disponibles sur Git.
+
+        
+            <a href="/post/git/" class="more">continuer la lecture</a>
+        
+    
 </div>
 
+    
+    
+    <div class="tags">
+        <i class="fa fa-tags"></i>
+        
+            <a href="/tags/git">Git</a>
+        
+    </div>
+    
+
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="/post/slideelasticbeats/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="/post/slideelasticbeats/">Présentation Elastic Beats</a></h3>
+    <div class="meta">
+        <span class="date moment">2016-06-05</span>
+
+        
+            <span class="categories">
+                
+                    <a href="/categories/slide">Slide</a>
+                
+                    <a href="/categories/elasticsearch">ElasticSearch</a>
+                
+            </span>
+        
+
+        
+    </div>
+
+    
+        Voici les slides de ma présentation du jeudi 26 mai à Caen. La présentation est suivie d&rsquo;une démo avec Kibana, ElasticSearch, packetbeat, topbeat et dockerbeat.
+ https://gauthierc.github.io/SlideElasticBeats/  Le docker-compose qui m&rsquo;a permis de lancer la démo:
+elasticsearch-int: image: elasticsearch ports: - 9200:9200 volumes: - &quot;/home/gauthier/esdata:/usr/share/elasticsearch/data&quot; kibana-int: image: kibana ports: - 5601:5601 environment: - ELASTICSEARCH_URL=http://elasticsearch-int:9200 links: - elasticsearch-int dockerbeat-int: image: ingensi/dockerbeat links: - elasticsearch-int:elasticsearch volumes: - &quot;/var/run/docker.sock:/var/run/docker.sock&quot;  
+
+        
+    
 </div>
 
-		</div>
+    
+    
+    <div class="tags">
+        <i class="fa fa-tags"></i>
+        
+            <a href="/tags/elasticsearch">ElasticSearch</a>
+        
+            <a href="/tags/packetbeat">Packetbeat</a>
+        
+    </div>
+    
 
-		<footer id="colophon" class="site-footer" role="contentinfo">
 
-			<div class="site-info">
-				<a href="http://gohugo.io">Proudly powered by Hugo</a>
-			</div>
-		</footer>
-	</div>
+</article>
 
-	<script type='text/javascript' src='https://gauthierc.github.io//js/functions.js'></script>
-</body>
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="/post/letsencrypt-haproxy/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="/post/letsencrypt-haproxy/">Let&#39;s Encrypt avec Haproxy</a></h3>
+    <div class="meta">
+        <span class="date moment">2016-01-24</span>
+
+        
+            <span class="categories">
+                
+                    <a href="/categories/haproxy">Haproxy</a>
+                
+            </span>
+        
+
+        
+    </div>
+
+    
+        Voici la documentation qui m&rsquo;a permis de mettre en place Let&rsquo;s Encrypt avec Haproxy.
+Sources:
+ https://coolaj86.com/articles/lets-encrypt-with-haproxy/ https://blog.infomee.fr/p/letsencrypt-haproxy  Principe Let&rsquo;s Encrypt permet de générer un certificat valide de façon automatique. Ce certificat a une durée de validité de 3 mois. Il faut donc le renouveler très régulièrement. Pour fonctionner letsencrypt a besoin d&rsquo;un serveur web, dans notre cas haproxy est juste un proxy, ce n&rsquo;est pas lui qui fournit les pages, mais les serveurs web des backends.
+
+        
+            <a href="/post/letsencrypt-haproxy/" class="more">continuer la lecture</a>
+        
+    
+</div>
+
+    
+    
+    <div class="tags">
+        <i class="fa fa-tags"></i>
+        
+            <a href="/tags/haproxy">haproxy</a>
+        
+            <a href="/tags/letsencrypt">letsencrypt</a>
+        
+    </div>
+    
+
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="/post/slidemicroservices/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="/post/slidemicroservices/">Présentation Docker Microservices</a></h3>
+    <div class="meta">
+        <span class="date moment">2016-01-20</span>
+
+        
+            <span class="categories">
+                
+                    <a href="/categories/slide">Slide</a>
+                
+                    <a href="/categories/microservices">Microservices</a>
+                
+                    <a href="/categories/docker">Docker</a>
+                
+            </span>
+        
+
+        
+    </div>
+
+    
+        Voici les slides de ma présentation du 19 janvier à Paris. La présentation prend plus d&rsquo;une heure. Le but de cette présentation est d&rsquo;amener les concepts d&rsquo;une architecture Microservices et de proposer des solutions pour la mise en production.
+ https://gauthierc.github.io/SlideDockerMicroservices/  
+
+        
+    
+</div>
+
+    
+    
+    <div class="tags">
+        <i class="fa fa-tags"></i>
+        
+            <a href="/tags/microservices">Microservices</a>
+        
+            <a href="/tags/docker">Docker</a>
+        
+            <a href="/tags/cloud">Cloud</a>
+        
+    </div>
+    
+
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="/post/packetbeat/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="/post/packetbeat/">Packetbeat 1.0Beta1</a></h3>
+    <div class="meta">
+        <span class="date moment">2015-06-09</span>
+
+        
+            <span class="categories">
+                
+                    <a href="/categories/elasticsearch">ElasticSearch</a>
+                
+            </span>
+        
+
+        
+    </div>
+
+    
+        Présentation PacketBeat est un outil qui permet de capturer les flux réseaux (http, mysql, postgres, redis, thrift) et d&rsquo;envoyer le tout sur une base elasticsearch afin de pouvoir analyser l&rsquo;ensemble des requêtes via l&rsquo;interface kibana. Il est également capable d&rsquo;analyser les communications entre 2 processus d&rsquo;un même serveur.
+Ce produit a l&rsquo;avantage d&rsquo;être très facile à déployer, c&rsquo;est écrit en Go donc il a très peu de dépendance. Les paquets rpm et deb de Packetbeat ne fonctionne pas sur certaines vieilles distributions (CentOS5, Debian6), mais je n&rsquo;ai pas essayé de le recompiler sur celles-ci.
+
+        
+            <a href="/post/packetbeat/" class="more">continuer la lecture</a>
+        
+    
+</div>
+
+    
+    
+    <div class="tags">
+        <i class="fa fa-tags"></i>
+        
+            <a href="/tags/elasticsearch">ElasticSearch</a>
+        
+            <a href="/tags/kibana">kibana</a>
+        
+            <a href="/tags/packetbeat">packetbeat</a>
+        
+    </div>
+    
+
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="/post/slidecoreos/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="/post/slidecoreos/">Présentation CoreOS</a></h3>
+    <div class="meta">
+        <span class="date moment">2015-06-01</span>
+
+        
+            <span class="categories">
+                
+                    <a href="/categories/slide">Slide</a>
+                
+                    <a href="/categories/coreos">CoreOS</a>
+                
+            </span>
+        
+
+        
+    </div>
+
+    
+        J&rsquo;ai mis en ligne les slides CoreOS que je présenterai à Nantes le 5 juin 2015. Je ne suis pas sûr de tenir dans les 50 minutes qui me sont allouées.
+ https://gauthierc.github.io/SlideCoreOS/  La plateforme CoreOS est pour moi intéressante pour plusieurs points:
+ Logiciel libre. Facile et rapide à déployer. Innovant sans pour autant demander un investissement trop important des équipes d&rsquo;exploitation. Un support pour ceux qui le désire.
+
+        
+            <a href="/post/slidecoreos/" class="more">continuer la lecture</a>
+        
+    
+</div>
+
+    
+    
+    <div class="tags">
+        <i class="fa fa-tags"></i>
+        
+            <a href="/tags/coreos">CoreOS</a>
+        
+            <a href="/tags/etcd">etcd</a>
+        
+            <a href="/tags/fleet">fleet</a>
+        
+    </div>
+    
+
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="/post/slideelk/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="/post/slideelk/">Présentation ElasticSearch Logstash Kibana</a></h3>
+    <div class="meta">
+        <span class="date moment">2015-03-25</span>
+
+        
+            <span class="categories">
+                
+                    <a href="/categories/slide">Slide</a>
+                
+                    <a href="/categories/elasticsearch">ElasticSearch</a>
+                
+            </span>
+        
+
+        
+    </div>
+
+    
+        Voici mes slides sur ElasticSearch Kibana et Logstash que j&rsquo;ai présenté lors de 2 conférences (une à Lille et l&rsquo;autre à Paris) en mars 2015. ElasticSearch est un super produit, par contre Kibana 4 est très différent de Kibana 3. Je n&rsquo;ai pas encore eu le temps de transférer tout mes dashboards.
+ https://gauthierc.github.io/SlideELK/  
+
+        
+    
+</div>
+
+    
+    
+    <div class="tags">
+        <i class="fa fa-tags"></i>
+        
+            <a href="/tags/elasticsearch">ElasticSearch</a>
+        
+            <a href="/tags/kibana">kibana</a>
+        
+            <a href="/tags/logstash">logstash</a>
+        
+    </div>
+    
+
+
+</article>
+
+            
+        </div>
+    
+
+    
+    <div class="paginator">
+        
+            <a href="/post/page/2/" class="older"><i class="fa fa-angle-double-left"></i> Articles plus anciens</a>
+        
+
+        
+    </div>
+
+
+
+        </div>
+
+        <footer>
+    <div class="container">
+        <div class="recent-posts">
+            <strong>Articles récents</strong>
+                <ul>
+                
+                    <li>
+                        <a href="/post/git/">GIT</a>
+                    </li>
+                
+                    <li>
+                        <a href="/post/slideelasticbeats/">Présentation Elastic Beats</a>
+                    </li>
+                
+                    <li>
+                        <a href="/post/letsencrypt-haproxy/">Let&#39;s Encrypt avec Haproxy</a>
+                    </li>
+                
+                    <li>
+                        <a href="/post/slidemicroservices/">Présentation Docker Microservices</a>
+                    </li>
+                
+                    <li>
+                        <a href="/post/packetbeat/">Packetbeat 1.0Beta1</a>
+                    </li>
+                
+                    <li>
+                        <a href="/post/slidecoreos/">Présentation CoreOS</a>
+                    </li>
+                
+                    <li>
+                        <a href="/post/slideelk/">Présentation ElasticSearch Logstash Kibana</a>
+                    </li>
+                
+                    <li>
+                        <a href="/post/slidevirtu/">Présentation Virtualisation CLoud</a>
+                    </li>
+                
+                    <li>
+                        <a href="/post/welcome/">Bienvenue</a>
+                    </li>
+                
+                </ul>
+        </div>
+
+        <div class="categories">
+            <strong>Catégories</strong>
+
+            
+                <ul>
+                
+                    <li>
+                        <a href="/categories/blog">Blog (1)</a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/coreos">Coreos (1)</a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/docker">Docker (1)</a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/elasticsearch">Elasticsearch (3)</a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/git">Git (1)</a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/haproxy">Haproxy (1)</a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/microservices">Microservices (1)</a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/slide">Slide (6)</a>
+                    </li>
+                
+                </ul>
+            
+        </div>
+
+        <div class="social-media">
+            <strong>Médias sociaux</strong>
+
+            
+            
+                <a href="https://twitter.com/CattGr" target="_blank"><i class="fa fa-twitter"></i></a>
+            
+            
+            
+            
+            
+            
+            
+            
+                <a href="https://github.com/gauthierc" target="_blank"><i class="fa fa-github"></i></a>
+            
+        </div>
+    </div>
+</footer>
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/Lednerb" target="_blank">&copy; 2017 by Lednerb </a>
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/gohugo-theme-bilberry" target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+        
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment-with-locales.min.js" integrity="sha256-TbOIe++NbC9P3KTtUMJ5wcROlBdnRqrPleLdpPg3xxE=" crossorigin="anonymous"></script>
+        <script src="/dist/theme.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                $(".moment").each(function() {
+                    $(this).text(
+                        moment( $(this).text() )
+                            .locale( "fr" )
+                            .format('LL')
+                    );
+                });
+
+                $(".footnote-return sup").html("[revenir]")
+            })
+        </script>
+
+        
+
+    </body>
 </html>
